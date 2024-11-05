@@ -6,12 +6,22 @@
     "blocks": {},
     "border": {},
     "color": {
-        "custom": false,
-        "palette": []
+        "defaultPalette": false,
+        "custom": true,
+        "palette": [
+            {
+                "color": "",
+                "name": "",
+                "slug": ""
+            }
+        ]
     },
     "custom": {},
     "dimensions": {},
-    "layout": {},
+    "layout": {
+        "contentSize": "",
+        "wideSize": ""
+    },
     "position": {},
     "shadow": {},
     "spacing": {},
