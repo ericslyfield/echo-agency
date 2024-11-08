@@ -36,33 +36,111 @@
     "shadow": {},
     "spacing": {},
     "typography": {
+        "fluid": true,
+        "customFontSize": false,
+        "letterSpacing": false,
         "defaultFontSizes": false,
+        "fontFamilies": [
+            {
+            "name": "Roc Grotesk Wide Extra Light",
+            "slug": "roc-grotesk-wide-x-light",
+            "fontFamily": "'Roc Grotesk', sans-serif",
+            "fontFace": [
+                {
+                "fontFamily": "'Roc Grotesk', sans-serif",
+                "fontStretch": "normal",
+                "fontStyle": "normal",
+                "fontWeight": "200",
+                "src": [
+                    "file:./assets/fonts/RocGrotesk-WideExtraLight.otf"
+                ]
+                }]
+            },
+            {
+            "name": "Roc Grotesk Wide Light",
+            "slug": "roc-grotesk-wide-light",
+            "fontFamily": "'Roc Grotesk', sans-serif",
+            "fontFace": [
+                {
+                    "fontFamily": "'Roc Grotesk', sans-serif",
+                    "fontStretch": "normal",
+                    "fontStyle": "normal",
+                    "fontWeight": "300",
+                    "src": [
+                        "file:./assets/fonts/RocGrotesk-WideLight.otf"
+                    ]
+                }]
+            },
+
+            {
+                "name": "Roc Grotesk Wide Medium",
+                "slug": "roc-grotesk-wide-medium",
+                "fontFamily": "Roc Grotesk",
+                "fontFace": [
+                    {
+                    "fontFamily": "'Roc Grotesk', sans-serif",
+                    "fontStretch": "normal",
+                    "fontStyle": "normal",
+                    "fontWeight": "400",
+                    "src": [
+                        "file:./assets/fonts/RocGrotesk-WideMedium.otf"
+                    ]
+                }]
+            }
+        ],
         "fontSizes": [
             {
                 "name": "Small",
                 "slug": "small",
-                "size": "14px"
+                "size": "0.875rem"
             },
             {
                 "name": "Medium",
-                "slug": "Medium",
-                "size": "20px"
+                "slug": "medium",
+                "size": "1.25rem"
             },
             {
                 "name": "Large",
-                "slug": "Large",
-                "size": "40px"
+                "slug": "large",
+                "size": "2.5rem"
             },
             {
                 "name": "Extra Large",
                 "slug": "x-large",
-                "size": "79px"
+                "size": "4.938rem"
             }
         ]
     },
     "useRootPaddingAwareAlignments": false
 }, 
-"styles":{},
+"styles":{
+    "spacing": {
+        "padding": {
+            "top": "0",
+            "bottom": "0",
+            "left": "2rem",
+            "right": "2rem"
+
+
+        }
+    },
+    "typography": {
+        "fontFamily": "var(--wp--preset--font-family--roc-grotesk-wide-x-light)"
+    },
+    
+    "elements": {
+        "h1": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--{x-large})"
+            }
+        },
+        "h2": {
+            "typography": {
+                "fontSize": "var(--wp--preset--font-size--{large})"
+            }
+        }
+    }
+},
 "templateParts": [],
 "patterns": []
 }
