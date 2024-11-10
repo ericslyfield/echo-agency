@@ -7,7 +7,10 @@
     "border": {},
     "color": {
         "defaultPalette": false,
-        "custom": true,
+        "defaultGradients": false,
+        "customGradient": false,
+        "background": true,
+        "custom": false,
         "palette": [
            {
                 "color": "#000000",
@@ -34,80 +37,89 @@
     },
     "position": {},
     "shadow": {},
-    "spacing": {},
+    "spacing": {
+        "blockGap": null,
+        "customSpacingSize": false,
+        "spacingScale": {
+            "operator": "*",
+            "increment": 1.414,
+            "steps": 7,
+            "mediumStep": 1.5,
+            "unit": "rem"
+        }
+    },
+    
+
     "typography": {
-        "fluid": true,
+        "fluid": {
+            "minFontSize": "13px",
+			"maxViewportWidth": "1600px",
+			"minViewportWidth": "320px"
+        },
         "customFontSize": false,
         "letterSpacing": false,
         "defaultFontSizes": false,
         "fontFamilies": [
-            {
-            "name": "Roc Grotesk Wide Extra Light",
-            "slug": "roc-grotesk-wide-x-light",
-            "fontFamily": "'Roc Grotesk', sans-serif",
-            "fontFace": [
-                {
-                "fontFamily": "'Roc Grotesk', sans-serif",
-                "fontStretch": "normal",
-                "fontStyle": "normal",
-                "fontWeight": "200",
-                "src": [
-                    "file:./assets/fonts/RocGrotesk-WideExtraLight.otf"
-                ]
-                }]
-            },
-            {
-            "name": "Roc Grotesk Wide Light",
-            "slug": "roc-grotesk-wide-light",
-            "fontFamily": "'Roc Grotesk', sans-serif",
-            "fontFace": [
-                {
-                    "fontFamily": "'Roc Grotesk', sans-serif",
-                    "fontStretch": "normal",
-                    "fontStyle": "normal",
-                    "fontWeight": "300",
-                    "src": [
-                        "file:./assets/fonts/RocGrotesk-WideLight.otf"
-                    ]
-                }]
-            },
-
-            {
-                "name": "Roc Grotesk Wide Medium",
-                "slug": "roc-grotesk-wide-medium",
+            { 
                 "fontFamily": "Roc Grotesk",
+                "name": "Roc Grotesk Wide",
+                "slug": "global",
                 "fontFace": [
                     {
                     "fontFamily": "'Roc Grotesk', sans-serif",
                     "fontStretch": "normal",
                     "fontStyle": "normal",
-                    "fontWeight": "400",
+                    "fontWeight": "200",
                     "src": [
-                        "file:./assets/fonts/RocGrotesk-WideMedium.otf"
+                        "file:./assets/fonts/RocGrotesk-WideExtraLight.otf"
                     ]
-                }]
+                    },
+                    {
+                        "fontFamily": "'Roc Grotesk', sans-serif",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "300",
+                        "src": [
+                            "file:./assets/fonts/RocGrotesk-WideLight.otf"
+                        ]
+                    },
+                    {
+                        "fontFamily": "'Roc Grotesk', sans-serif",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "400",
+                        "src": [
+                            "file:./assets/fonts/RocGrotesk-WideMedium.otf"
+                        ]
+                    }
+                ]
             }
         ],
         "fontSizes": [
             {
                 "name": "Small",
                 "slug": "small",
-                "size": "0.875rem"
+                "size": "0.7807rem"
             },
             {
                 "name": "Medium",
                 "slug": "medium",
-                "size": "1.25rem"
+                "size": "1rem"
             },
             {
                 "name": "Large",
                 "slug": "large",
-                "size": "2.5rem"
+                "size": "1.414rem"
             },
             {
                 "name": "Extra Large",
                 "slug": "x-large",
-                "size": "4.938rem"
+                "size": "2.827rem"
+            },
+            {
+                "name": "Extra Extra Large",
+                "slug": "xx-large",
+                "size": "3.998rem"
             }
         ]
     },
