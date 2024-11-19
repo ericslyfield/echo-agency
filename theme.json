@@ -8,8 +8,14 @@
     "color": {
         "defaultPalette": false,
         "defaultGradients": false,
-        "customGradient": false,
+        "customGradient": true,
+        "text": true,
+        "link": true,
+        "button": true,
+        "heading": true,
+        "caption": true,
         "background": true,
+        "defaultDuotone": true,
         "custom": false,
         "palette": [
            {
@@ -27,6 +33,23 @@
                 "name": "Heart",
                 "slug": "heart"
             } 
+        ],
+        "gradients": [
+            {
+                "gradient": "linear-gradient(-225deg, #FBF1DA, #E6B980)",
+                "name": "Arabian Quarter",
+                "slug": "arabian-quarter"
+            },
+            {
+                "gradient": "linear-gradient(-225deg, #5C6E83, #151B21)",
+                "name": "Dusk",
+                "slug": "dusk"
+            },
+            {
+                "gradient": "linear-gradient(-225deg, #F96548, #990118)",
+                "name": "Dubai Afternoon",
+                "slug": "dubai-afternoon"
+            }
         ]
     },
     "custom": {},
@@ -51,11 +74,7 @@
     
 
     "typography": {
-        "fluid": {
-            "minFontSize": "13px",
-			"maxViewportWidth": "1600px",
-			"minViewportWidth": "320px"
-        },
+        "fluid": true,
         "customFontSize": false,
         "letterSpacing": false,
         "defaultFontSizes": false,
@@ -96,7 +115,15 @@
             }
         ],
         "fontSizes": [
+            
             {
+                "fluid": {
+
+                    "min": "",
+                    "max": ""
+                    
+
+                },
                 "name": "Small",
                 "slug": "small",
                 "size": "0.7807rem"
@@ -123,7 +150,7 @@
             }
         ]
     },
-    "useRootPaddingAwareAlignments": false
+    "useRootPaddingAwareAlignments": true
 }, 
 "styles":{
     "spacing": {
