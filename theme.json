@@ -19,9 +19,9 @@
         "custom": false,
         "palette": [
            {
-                "color": "#000000",
-                "name": "Black",
-                "slug": "black"
+                "color": "#151B21",
+                "name": "Rich Black",
+                "slug": "rich-black"
             },
             {
                 "color": "#D6C6B0",
@@ -29,14 +29,19 @@
                 "slug": "sand"
             },
             {
-                "color": "#EB3425",
+                "color": "#F4EDED",
+                "name": "Snow",
+                "slug": "snow"
+            },
+            {
+                "color": "#DC4739",
                 "name": "Heart",
                 "slug": "heart"
             } 
         ],
         "gradients": [
             {
-                "gradient": "linear-gradient(-225deg, #FBF1DA, #E6B980)",
+                "gradient": "linear-gradient(-225deg, #FBF1DA, #E5B16E)",
                 "name": "Arabian Quarter",
                 "slug": "arabian-quarter"
             },
@@ -46,7 +51,7 @@
                 "slug": "dusk"
             },
             {
-                "gradient": "linear-gradient(-225deg, #F96548, #990118)",
+                "gradient": "linear-gradient(-225deg, #f46e2b, #b10e03)",
                 "name": "Dubai Afternoon",
                 "slug": "dubai-afternoon"
             }
@@ -55,8 +60,8 @@
     "custom": {},
     "dimensions": {},
     "layout": {
-        "contentSize": "",
-        "wideSize": ""
+        "contentSize": "900px",
+        "wideSize": "1080px"
     },
     "position": {},
     "shadow": {},
@@ -159,8 +164,12 @@
             "bottom": "0",
             "left": "2rem",
             "right": "2rem"
-
-
+        },
+        "margin": {
+            "top": "0",
+            "bottom": "0",
+            "left": "0",
+            "right": "0"
         }
     },
     "typography": {
@@ -180,6 +189,17 @@
         }
     }
 },
-"templateParts": [],
+"templateParts": [
+    {
+        "name": "header",
+        "area": "header",
+        "title": "Header"
+    },
+    {
+        "name": "Card",
+        "area": "main",
+        "title": "Card"
+    }
+],
 "patterns": []
 }
