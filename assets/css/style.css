@@ -1,3 +1,187 @@
 p {
   color: red;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Ripple Animation */
+.ripple-circle {
+  position: absolute;
+  pointer-events: none; /* Prevents interfering with other events */
+  transform: scale(0); /* Start the circle at 0 size */
+  background-color: transparent; /* Transparent center */
+  mix-blend-mode: hard-light;
+  animation: ripple-animation 1.2s forwards;
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0); /* Start with no size */
+    opacity: 1; /* Fully visible at the start */
+  }
+  100% {
+    transform: scale(3); /* Circle grows to 3 times its size */
+    opacity: 0; /* Fade out the border */
+  }
+}
+/* "Claude" Talent Grid */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.talent-card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 0;
+}
+
+.image-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 100% 0 0 100%/50%;
+  transform-origin: center right;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.talent-card:hover .image-container {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.image-container .wp-block-post-featured-image {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  transform-origin: center right;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.talent-card:hover .image-container .wp-block-post-featured-image {
+  width: 100%;
+}
+
+.image-container .wp-block-post-featured-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.talent-info {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 1.5rem;
+  text-align: right;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  width: 60%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.talent-card:hover .talent-info {
+  opacity: 0;
+}
+
+.talent-info .wp-block-post-title a,
+.talent-info .wp-block-post-terms a,
+.talent-info p {
+  color: white;
+  text-decoration: none;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.7) 50%);
+  z-index: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.talent-card:hover .image-container::after {
+  opacity: 0;
+}
+
+@media (max-width: 781px) {
+  .talent-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .talent-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+}
+/* */
+/* Initial state for the navigation container */
+.slide-up-link-container {
+  position: relative;
+  overflow: hidden; /* Hide overflow to create the sliding effect */
+}
+
+/* Navigation items - Initially not animated */
+.slide-up-link-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-up-link-container li {
+  position: relative;
+  opacity: 1; /* Ensure items are visible by default */
+  transform: translateY(0); /* Start at their normal position */
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition for transform and opacity */
+}
+
+/* Hover state - Trigger the animation when hovering over a menu item */
+.slide-up-link-container li:hover {
+  transform: translateY(-100%); /* Move the item up */
+  opacity: 0; /* Fade it out */
+}
+
+/* Hover animation for items entering from the bottom */
+.slide-up-link-container li:hover {
+  animation: slideUp 0.6s ease-in-out forwards; /* Apply the animation when hovered */
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%); /* Start from below */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1; /* Fade back in */
+  }
+}
+/* Optional: Slight delay for each item to create staggered animation */
+.slide-up-link-container li:nth-child(1):hover {
+  animation-delay: 0s;
+}
+
+.slide-up-link-container li:nth-child(2):hover {
+  animation-delay: 0.2s;
+}
+
+.slide-up-link-container li:nth-child(3):hover {
+  animation-delay: 0.4s;
+}
+
+/* Add additional delays for more list items as needed *//*# sourceMappingURL=style.css.map */
