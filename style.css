@@ -13,7 +13,7 @@ License URI: The URL of the theme license.
 Text Domain: echo-agency-theme
 */
 
-
+/* Ripple Animation */
 .ripple {
     position: absolute;
     border-radius: 50%;
@@ -34,3 +34,97 @@ Text Domain: echo-agency-theme
         border-width: 0px;
     }
 }
+
+/* "Claude" Talent Grid */
+
+.talent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 1rem;
+  }
+  .talent-card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 0;
+  }
+  .image-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 100% 0 0 100% / 50%;
+    transform-origin: center right;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .talent-card:hover .image-container {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .image-container .wp-block-post-featured-image {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    transform-origin: center right;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .talent-card:hover .image-container .wp-block-post-featured-image {
+    width: 100%;
+  }
+  .image-container .wp-block-post-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .talent-info {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 1.5rem;
+    text-align: right;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 60%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .talent-card:hover .talent-info {
+    opacity: 0;
+  }
+  .talent-info .wp-block-post-title a,
+  .talent-info .wp-block-post-terms a,
+  .talent-info p {
+    color: white;
+    text-decoration: none;
+  }
+  .image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.7) 50%);
+    z-index: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  .talent-card:hover .image-container::after {
+    opacity: 0;
+  }
+  @media (max-width: 781px) {
+    .talent-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .talent-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+  }

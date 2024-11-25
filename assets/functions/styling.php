@@ -38,7 +38,7 @@ class Styling {
 
     // Protected method to register styles
     protected function register_styles() {
-        $this->register_style('stylesheet', '/assets/scss/style.css');
+        $this->register_style('stylesheet', '/assets/css/style.css');
     }
 
     // Protected method to register scripts
