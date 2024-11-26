@@ -1,6 +1,7 @@
-p{
-    color: red;
-}
+@use 'base';
+@use 'pages';
+@use 'layout';
+@use 'components';
 
 /* Ripple Animation */
 .ripple-circle {

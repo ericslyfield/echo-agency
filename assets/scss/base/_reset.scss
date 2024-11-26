@@ -1,0 +1,120 @@
+/**********************
+* Browser Reset Rules *
+***********************/
+
+
+/* https://andy-bell.co.uk/a-modern-css-reset/  */
+
+/* Box sizing rules */
+html{
+	box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+html {
+    touch-action: manipulation;
+}
+
+html,body
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: visible;
+}
+
+html, body, div {
+	margin-top: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	min-height: 100vh;
+}
+
+/* Lists */
+
+ol, ul {
+	list-style: none;
+	padding: 0;
+}
+
+
+/* Quotes */
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Images */
+
+img,
+image,
+picture{
+    display: block;
+	width: 100%;
+    max-width: 100vw;
+}
+
+/* Forms */
+
+input,
+button,
+textarea,
+select{
+	font: inherit;
+}
+
+/* Animation Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after{
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
