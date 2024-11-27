@@ -59,3 +59,41 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+# WordPress Build
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+.env
+.env.backup
+.env.example
+.env.production
+
+# Laravel specific
+/.env.*.local
+
+# Logs
+/storage/logs/*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# NPM and Yarn specific
+yarn-debug.log
+
+# Build artifacts
+/build/
+/dist/
+
+# React specific
+/.cache/
+
+# Other files to ignore
+*.pem
+*.p12
+.env.example
