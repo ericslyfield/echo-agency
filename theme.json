@@ -3,7 +3,17 @@
     "version": 3,
 "settings": {
     "appearanceTools": true,
-    "blocks": {},
+    "lightbox": {
+        "enabled": true
+    },
+    "blocks": {
+        "core/image": {
+            "lightbox": {
+                "enabled": true,
+                "allowEditing": true
+            }
+        }
+    },
     "border": {},
     "color": {
         "defaultPalette": false,
@@ -60,14 +70,14 @@
     "custom": {},
     "dimensions": {},
     "layout": {
-        "contentSize": "900px",
-        "wideSize": "1080px"
+        "contentSize": "1080px",
+        "wideSize": "1440px"
     },
     "position": {},
     "shadow": {},
     "spacing": {
         "blockGap": null,
-        "customSpacingSize": false,
+        "customSpacingSize": true,
         "spacingScale": {
             "operator": "*",
             "increment": 1.414,
@@ -81,7 +91,7 @@
     "typography": {
         "fluid": true,
         "customFontSize": false,
-        "letterSpacing": false,
+        "letterSpacing": true,
         "defaultFontSizes": false,
         "fontFamilies": [
             { 
@@ -124,10 +134,8 @@
             {
                 "fluid": {
 
-                    "min": "",
-                    "max": ""
-                    
-
+                    "min": "0.75rem",
+                    "max": "0.7807rem"
                 },
                 "name": "Small",
                 "slug": "small",
@@ -173,18 +181,18 @@
         }
     },
     "typography": {
-        "fontFamily": "var(--wp--preset--font-family--roc-grotesk-wide-x-light)"
+        "fontFamily": "var(--wp--preset--font-family--global)"
     },
     
     "elements": {
         "h1": {
             "typography": {
-                "fontSize": "var(--wp--preset--font-size--{x-large})"
+                "fontSize": "var(--wp--preset--font-size--x-large)"
             }
         },
         "h2": {
             "typography": {
-                "fontSize": "var(--wp--preset--font-size--{large})"
+                "fontSize": "var(--wp--preset--font-size--large)"
             }
         }
     }
@@ -200,6 +208,5 @@
         "area": "main",
         "title": "Card"
     }
-],
-"patterns": []
+]
 }

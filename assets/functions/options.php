@@ -2,16 +2,14 @@
 class Options {
    public function __construct() {
     
-       // Menu Support
-       register_nav_menus();
-
        // Modern Supports Pack
-
-        add_theme_support( 'post-thumbnails' );
+       add_theme_support( 'wp-block-styles' );  // Allows alternative styles to be applied to existing blocks
+        add_theme_support( 'post-thumbnails' ); 
         add_theme_support( 'responsive-embeds' );
         add_theme_support( 'html5', array('style','script', 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption') );
-        
 
+        // Specifically enable lightbox support
+        add_theme_support( 'block-gallery-lightbox' );
 
        // RSS Feed Supoprt
        add_theme_support( 'automatic-feed-links' );
@@ -37,16 +35,6 @@ class Options {
 
        // Title Support
        add_theme_support( 'title-tag' );
-
-
-       // Navigation Menu Support
-        register_nav_menus(
-	        array(
-		        'header-menu' =>__('Header Menu', 'theme'),
-		        'mobile-menu' =>__('Mobile Menu', 'theme'),
-		        'footer-menu' =>__('Footer Menu', 'theme'),
-	        )
-        );
 
        // Responive Video Embed Options
        add_theme_support( 'responsive-embeds' );
