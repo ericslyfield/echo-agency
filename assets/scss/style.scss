@@ -34,6 +34,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     padding: 1rem;
+    margin: 1rem;
   }
   .talent-card {
     position: relative;
@@ -86,7 +87,8 @@
     transition: opacity 0.3s ease-in-out;
   }
   .talent-card:hover .talent-info {
-    opacity: 0;
+    opacity: 1;
+    z-index: 1;
   }
   .talent-info .wp-block-post-title a,
   .talent-info .wp-block-post-terms a,
@@ -94,6 +96,11 @@
     color: white;
     text-decoration: none;
   }
+
+  .wp-block-post-title a{
+ word-break: normal;
+  }
+
   .image-container::after {
     content: '';
     position: absolute;

@@ -133,30 +133,47 @@
             
             {
                 "fluid": {
-
-                    "min": "0.75rem",
-                    "max": "0.7807rem"
+                    "min": "0.55rem",
+                    "max": "0.707rem"
                 },
                 "name": "Small",
                 "slug": "small",
-                "size": "0.7807rem"
+                "size": "0.707rem"
             },
             {
+                "fluid": {
+                    "min": "0.707rem",
+                    "max": "1rem"
+                },
                 "name": "Medium",
                 "slug": "medium",
                 "size": "1rem"
             },
             {
+                "fluid": {
+                    "min": "1.414rem",
+                    "max": "1.999rem"
+                },
                 "name": "Large",
                 "slug": "large",
-                "size": "1.414rem"
+                "size": "1.999rem"
             },
             {
+                "fluid": {
+
+                    "min": "2rem",
+                    "max": "2.827rem"
+                },
                 "name": "Extra Large",
                 "slug": "x-large",
                 "size": "2.827rem"
             },
             {
+                "fluid": {
+
+                    "min": "2.9rem",
+                    "max": "3.998rem"
+                },
                 "name": "Extra Extra Large",
                 "slug": "xx-large",
                 "size": "3.998rem"
@@ -170,8 +187,8 @@
         "padding": {
             "top": "0",
             "bottom": "0",
-            "left": "2rem",
-            "right": "2rem"
+            "left": "0rem",
+            "right": "0rem"
         },
         "margin": {
             "top": "0",

@@ -1,0 +1,40 @@
+.card-style {
+    border: 2px solid #ccc; /* Adjust border color as needed */
+    border-radius: 8px; /* Optional, for rounded corners */
+    min-height: 350px; /* Set the minimum height */
+    padding: 16px; /* Optional, for inner padding */
+    display: flex; /* Flexbox to help with layout if needed */
+    flex-direction: column; /* Align elements vertically */
+    box-sizing: border-box; /* Ensures padding is included in the total height calculation */
+    object-fit: cover;
+  }
+
+  .rounded{
+    border-radius: 15px;
+  }
+
+  .z-5{
+    z-index: 5;
+  }
+
+  .z-10{
+    z-index: 10;
+  }
+
+  .z-25{
+    z-index: 25;
+  }
+
+  .z-50{
+    z-index: 50;
+  }
+
+  .wp-block-media-text__media{
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

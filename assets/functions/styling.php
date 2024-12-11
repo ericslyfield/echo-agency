@@ -43,8 +43,18 @@ class Styling {
 
     // Protected method to register scripts
     protected function register_scripts() {
-        //Registers default scripts File
+        //Registers default/core scripts (Do not delete this!)
         $this->register_script('scripts', '/assets/js/scripts.js');
+        //Registers Menu Link Hover Effect
+        $this->register_script('link-hover', '/assets/js/link-hover.js');
+        //Registers Ripple Click Animation
+        $this->register_script('ripple-click', '/assets/js/ripple-click.js');
+        //Registers Carousel Animation
+        $this->register_script('carousel-text', '/assets/js/carousel-text.js');
+        //Registers default scripts File
+        $this->register_script('text-scroll-distortion', '/assets/js/text-scroll-distortion.js');
+
+        $this->register_script( 'curtains-js', 'https://cdnjs.cloudflare.com/ajax/libs/curtainsjs/6.2.0/curtains.min.js');
     }
 
     // Private method to register a style
@@ -53,11 +63,21 @@ class Styling {
         wp_register_style($handle, $this->styles[$handle], [], null, 'all');
     }
 
-    // Private method to register a script
-    private function register_script($handle, $path) {
+// Private method to register a script
+private function register_script($handle, $path) {
+    // Check if $path is a full URL (CDN link)
+    if (filter_var($path, FILTER_VALIDATE_URL)) {
+        // If it's a valid URL, use the CDN link
+        $this->scripts[$handle] = $path;
+        // Register the script with an empty version for CDN links
+        wp_register_script($handle, $this->scripts[$handle], [], null, true);
+    } else {
+        // If it's not a valid URL, assume it's a relative path in the theme directory
         $this->scripts[$handle] = get_template_directory_uri() . $path;
+        // Register the script with file modification time for cache busting
         wp_register_script($handle, $this->scripts[$handle], [], filemtime(get_template_directory() . $path), true);
     }
+}
 
     // Private method to enqueue registered styles
     private function enqueue_registered_styles() {
@@ -67,5 +87,8 @@ class Styling {
     // Private method to enqueue registered scripts
     private function enqueue_registered_scripts() {
         wp_enqueue_script('scripts');
+        wp_enqueue_script('link-hover');
+        wp_enqueue_script('ripple-click');
+        wp_enqueue_script('text-scroll-distortion');
     }
 }

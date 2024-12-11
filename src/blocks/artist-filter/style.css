@@ -1,0 +1,14 @@
+.wp-block-echo-agency-artist-filter select {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.wp-block-echo-agency-artist-filter select:focus {
+    outline: 2px solid #007cba;
+    border-color: #007cba;
+}
