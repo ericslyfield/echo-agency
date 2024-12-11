@@ -49,10 +49,6 @@ class Styling {
         $this->register_script('link-hover', '/assets/js/link-hover.js');
         //Registers Ripple Click Animation
         $this->register_script('ripple-click', '/assets/js/ripple-click.js');
-        //Registers Carousel Animation
-        $this->register_script('carousel-text', '/assets/js/carousel-text.js');
-        //Registers default scripts File
-        $this->register_script('text-scroll-distortion', '/assets/js/text-scroll-distortion.js');
 
         // $this->register_script( 'curtains-js', 'https://cdnjs.cloudflare.com/ajax/libs/curtainsjs/6.2.0/curtains.min.js');
     }
@@ -89,6 +85,5 @@ private function register_script($handle, $path) {
         wp_enqueue_script('scripts');
         wp_enqueue_script('link-hover');
         wp_enqueue_script('ripple-click');
-        wp_enqueue_script('text-scroll-distortion');
     }
 }
