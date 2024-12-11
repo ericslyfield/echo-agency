@@ -52,30 +52,5 @@ function echo_get_talent_counts($talent_name) {
     ];
 }
 
-
-function echo_agency_register_blocks() {
-     register_block_type( __DIR__ . '/build/blocks/semi-circle' );
- }
- add_action( 'init', 'echo_agency_register_blocks' );
-
- register_block_type(
-    'echo-agency/artist-view-more',
-    array(
-        'api_version' => 3,
-        'editor_script' => 'echo-agency-editor-script',
-        'render_callback' => 'echo_agency_render_view_more_block',
-        'attributes' => array(
-            'artistId' => array(
-                'type' => 'number',
-                'default' => 0
-            ),
-            'className' => array(
-                'type' => 'string',
-                'default' => ''
-            )
-        )
-    )
-);
-
 ?>
 

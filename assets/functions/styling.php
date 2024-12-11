@@ -54,7 +54,7 @@ class Styling {
         //Registers default scripts File
         $this->register_script('text-scroll-distortion', '/assets/js/text-scroll-distortion.js');
 
-        $this->register_script( 'curtains-js', 'https://cdnjs.cloudflare.com/ajax/libs/curtainsjs/6.2.0/curtains.min.js');
+        // $this->register_script( 'curtains-js', 'https://cdnjs.cloudflare.com/ajax/libs/curtainsjs/6.2.0/curtains.min.js');
     }
 
     // Private method to register a style
