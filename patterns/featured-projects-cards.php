@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Featured Projects Grid
+ * Title: Featured Projects Cards
  * Slug: echo-agency/featured-projects-cards
  * Categories: all, featured
  * Keywords: projects, grid, portfolio
@@ -14,20 +14,20 @@
     <div class="wp-block-group projects-filter">
         <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"}} -->
         <div class="wp-block-buttons">
-            <!-- wp:button {"className":"is-style-outline filter-btn"} -->
-            <div class="wp-block-button is-style-outline filter-btn"><a class="wp-block-button__link">Fashion</a></div>
+            <!-- wp:button {"className":"is-style-outline "} -->
+            <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Fashion</a></div>
             <!-- /wp:button -->
             
-            <!-- wp:button {"className":"is-style-outline filter-btn"} -->
-            <div class="wp-block-button is-style-outline filter-btn"><a class="wp-block-button__link">Beauty</a></div>
+            <!-- wp:button {"className":"is-style-outline "} -->
+            <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Beauty</a></div>
             <!-- /wp:button -->
             
-            <!-- wp:button {"className":"is-style-outline filter-btn"} -->
-            <div class="wp-block-button is-style-outline filter-btn"><a class="wp-block-button__link">Music</a></div>
+            <!-- wp:button {"className":"is-style-outline "} -->
+            <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Music</a></div>
             <!-- /wp:button -->
             
-            <!-- wp:button {"className":"is-style-outline filter-btn"} -->
-            <div class="wp-block-button is-style-outline filter-btn"><a class="wp-block-button__link">Lifestyle</a></div>
+            <!-- wp:button {"className":"is-style-outline "} -->
+            <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Lifestyle</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
@@ -38,7 +38,7 @@
     <div class="wp-block-query">
         <!-- wp:post-template -->
         <!-- wp:group {"className":"project-card","layout":{"type":"constrained"}} -->
-        <div class="wp-block-group project-card">
+        <div class="wp-block-group card">
             <!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"400px","style":{"border":{"radius":"0px"}}} /-->
             
             <!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"textTransform":"uppercase"}}} /-->
@@ -59,3 +59,4 @@
     <!-- /wp:buttons -->
 </div>
 <!-- /wp:group -->
+

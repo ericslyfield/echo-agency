@@ -1,0 +1,20 @@
+/* Base card styles */
+.wp-block-group.card {
+    transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    transition: border-color 0.3s ease;
+}
+
+.wp-block-group.card-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    border-color: #007cba; /* WordPress blue or your theme's primary color */
+}
+
+
+.wp-block-group.card:hover {
+    transform: scale(1.05);
+    border-color: #007cba; /* WordPress blue or your theme's primary color */
+}

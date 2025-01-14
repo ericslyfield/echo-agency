@@ -1,15 +1,11 @@
 <?php
-function echo_agency_wrap_nav_text($title, $item) {
-    // Wrap the original text in a span
-    return '<span>' . esc_html($title) . '</span>';
+function enqueue_rolling_text_script() {
+    wp_enqueue_script(
+        'rolling-text', 
+        get_template_directory_uri() . 'assets/js/rolling-text.js', 
+        array(), 
+        '1.0', 
+        true
+    );
 }
-add_filter('nav_menu_item_title', 'echo_agency_wrap_nav_text', 10, 2);
-
-function echo_agency_add_data_attribute($atts, $item, $args) {
-    // Add the data-replace attribute with the same text
-    $atts['data-replace'] = esc_attr($item->title);
-    // Add a class for styling
-    $atts['class'] = isset($atts['class']) ? $atts['class'] . ' text-swap' : 'text-swap';
-    return $atts;
-}
-add_filter('nav_menu_link_attributes', 'echo_agency_add_data_attribute', 10, 3);
+add_action('wp_enqueue_scripts', 'enqueue_rolling_text_script');

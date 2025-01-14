@@ -1,9 +1,12 @@
 #circle {
     position: relative;
     transform-style: preserve-3d;
-    animation: rotate-animation 8s linear infinite;
+    animation: rotate-animation 10s linear infinite;
     // background: #ba6b6b3e;
     // color: #e51010;
+    display: flex;
+    justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
   }
   
   @keyframes rotate-animation {
@@ -12,15 +15,15 @@
   }
   
 //   /* Misc. */
-//   body {
+  body {
 
 //     margin: 0;
 //     padding: 0;
 //     // display: grid;
-//     place-items: center;
+    place-items: center;
 //     font-size: 4vw;
 //     font-weight: bold;
 //     background: #ba6b6b3e;
 //     color: #e51010;
-//   }
+  }
   

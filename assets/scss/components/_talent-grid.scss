@@ -1,0 +1,94 @@
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 1rem;
+  margin: 1rem;
+
+  @media (max-width: 781px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.talent-card {
+  position: relative;
+  aspect-ratio: 1;
+
+  &:hover {
+    .image-container {
+      width: 100%;
+      border-radius: 50%;
+
+      &::after {
+        opacity: 0;
+      }
+
+      .wp-block-post-featured-image {
+        width: 100%;
+      }
+    }
+
+    .talent-info {
+      mix-blend-mode: exclusion;
+    }
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 100% 0 0 100% / 50%;
+  transform-origin: center right;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::after {
+    content: '';
+    position: relative;
+    inset: 0;
+    z-index: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .wp-block-post-featured-image {
+    position: relative;
+    width: 200%;
+    height: 100%;
+    inset: 0;
+    margin: 0;
+    transform-origin: center right;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.talent-info {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  right: 20px;
+  transform: translateY(-30%);
+  text-align: right;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  .wp-block-post-title a,
+  .wp-block-post-terms a,
+  p {
+    text-decoration: none;
+  }
+}
+
+.wp-block-post-title a {
+  word-break: break-word;
+}

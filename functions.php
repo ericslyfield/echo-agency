@@ -2,15 +2,25 @@
 /**
 * Theme Functions
 *
-* @package Echo
+* @package echo-agency
 */
 
-// Run Autoloader
-require_once 'autoloader.php';
-
-// Load
-new Styling;
-new Options;
+// Run Autoloader with error handling
+$autoloader_path = __DIR__ . '/autoloader.php';
+if (file_exists($autoloader_path)) {
+    require_once $autoloader_path;
+    
+    // Only try to instantiate classes if they exist
+    if (class_exists('styling')) {
+        new styling();
+    }
+    if (class_exists('options')) {
+        new options();
+    }
+} else {
+    // Log error or handle gracefully
+    error_log('Echo Agency Theme: Autoloader file not found');
+}
 
 
 // Register Block Template Support for Classic Themes Fallback
@@ -19,38 +29,3 @@ new Options;
      // add_theme_support('wp-block-styles');
 // }
 // add_action('after_setup_theme', 'theme_setup');
-
-
-function echo_get_talent_counts($talent_name) {
-    $projects_query = new WP_Query([
-        'post_type' => 'projects',
-        'tax_query' => [
-            [
-                'taxonomy' => 'talent-tag',
-                'field'    => 'name',
-                'terms'    => $talent_name
-            ]
-        ],
-        'posts_per_page' => -1,
-    ]);
-
-    $press_query = new WP_Query([
-        'post_type' => 'press',
-        'tax_query' => [
-            [
-                'taxonomy' => 'talent-tag',
-                'field'    => 'name',
-                'terms'    => $talent_name
-            ]
-        ],
-        'posts_per_page' => -1,
-    ]);
-
-    return [
-        'projects' => $projects_query->found_posts,
-        'press' => $press_query->found_posts
-    ];
-}
-
-?>
-

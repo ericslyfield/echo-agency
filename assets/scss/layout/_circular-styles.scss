@@ -1,0 +1,28 @@
+.circular-container {
+    /* Make the container behave as an inline-block to wrap content */
+    display: inline-block;
+    
+    /* Set a minimum size if desired */
+    min-width: 100px;
+    min-height: 100px;
+    
+    /* Make it square using aspect-ratio */
+    aspect-ratio: 1;
+    
+    /* Create the circular shape */
+    border-radius: 50%;
+    
+    /* Optional styling */
+    border: 2px solid #000;
+    
+    /* Center the content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Prevent content from breaking the circular shape */
+    overflow: scroll;
+  
+    /* Optional: add padding to maintain some space from the edges */
+    padding: 1em;
+  }

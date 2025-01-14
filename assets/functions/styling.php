@@ -45,11 +45,13 @@ class Styling {
     protected function register_scripts() {
         //Registers default/core scripts (Do not delete this!)
         $this->register_script('scripts', '/assets/js/scripts.js');
-        //Registers Menu Link Hover Effect
-        $this->register_script('link-hover', '/assets/js/link-hover.js');
         //Registers Ripple Click Animation
         $this->register_script('ripple-click', '/assets/js/ripple-click.js');
-
+        //Registers Ripple Hover Animation
+        $this->register_script('ripple-hover', '/assets/js/ripple-hover.js');
+        // GSAP
+        $this->register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js');      
+        // Curtains
         // $this->register_script( 'curtains-js', 'https://cdnjs.cloudflare.com/ajax/libs/curtainsjs/6.2.0/curtains.min.js');
     }
 

@@ -2,7 +2,6 @@
 * Browser Reset Rules *
 ***********************/
 
-
 /* https://andy-bell.co.uk/a-modern-css-reset/  */
 
 /* Box sizing rules */
@@ -16,7 +15,7 @@ html{
 }
 
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 html {
@@ -25,8 +24,6 @@ html {
 
 html,body
 {
-	width: 100%;
-	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	overflow: visible;
@@ -47,9 +44,8 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+  margin: 0px;
 }
-
 
 /* HTML5 display-role reset for older browsers */
 
@@ -68,7 +64,6 @@ ol, ul {
 	list-style: none;
 	padding: 0;
 }
-
 
 /* Quotes */
 
@@ -118,7 +113,3 @@ select{
 		scroll-behavior: auto !important;
 	}
 }
-
-
-/**/
-
