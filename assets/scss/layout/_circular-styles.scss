@@ -3,8 +3,8 @@
     display: inline-block;
     
     /* Set a minimum size if desired */
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 50px;
+    min-height: 50px;
     
     /* Make it square using aspect-ratio */
     aspect-ratio: 1;
@@ -21,7 +21,7 @@
     justify-content: center;
 
     /* Prevent content from breaking the circular shape */
-    overflow: scroll;
+    overflow: hidden;
   
     /* Optional: add padding to maintain some space from the edges */
     padding: 1em;

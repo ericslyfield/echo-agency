@@ -75,10 +75,10 @@
 .talent-info {
   position: absolute;
   top: 50%;
-  width: 50%;
-  right: 20px;
-  transform: translateY(-30%);
-  text-align: right;
+  width: 65%;
+  right: 0px;
+  transform: translate3d(50px, -70px, 0px);
+  text-align: left;
   z-index: 1;
   transition: opacity 0.3s ease-in-out;
 

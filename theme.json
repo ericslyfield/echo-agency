@@ -123,7 +123,7 @@
 		"enabled": true
 	  },
 	  "spacing": {
-		"blockGap": true,
+		"blockGap": false,
 		"customSpacingSize": true,
 		"spacingScale": {
 		  "increment": 1.414,
