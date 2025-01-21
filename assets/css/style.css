@@ -105,10 +105,6 @@ select {
   }
 }
 /* Set a special hover color */
-.wp-block-button.on-red a:hover {
-  background-color: pink;
-}
-
 .wp-block-button {
   transition: all 0.3s ease;
 }
@@ -155,6 +151,18 @@ select {
   align-items: center;
 }
 
+.about-link.p {
+  font-size: 92px !important;
+}
+
+.x-large {
+  font-size: var(--wp--preset--font-size--x-large) !important;
+}
+
+.xx-large {
+  font-size: var(--wp--preset--font-size--xx-large) !important;
+}
+
 .circular-container {
   /* Make the container behave as an inline-block to wrap content */
   display: inline-block;
@@ -166,7 +174,7 @@ select {
   /* Create the circular shape */
   border-radius: 50%;
   /* Optional styling */
-  border: 2px solid #000;
+  border: 2px solid #ffffff;
   /* Center the content */
   display: flex;
   align-items: center;
@@ -243,40 +251,29 @@ select {
 }
 
 /* Base card styles */
+.wp-block-group.card-grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .wp-block-group.card {
   transition: all 0.3s ease;
   position: relative;
-  padding: 1.5rem;
   top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 4px;
+  border-radius: 15px;
   transition: border-color 0.3s ease;
-}
-
-.wp-block-group.card-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  border-color: #007cba; /* WordPress blue or your theme's primary color */
 }
 
 .wp-block-group.card:hover {
   transform: scale(1.05);
-  border-color: #007cba; /* WordPress blue or your theme's primary color */
 }
 
-/* Card variations based on background context */
-.card--on-black {
-  background-color: var(--wp--preset--color--rich-black);
-  color: var(--wp--preset--color--echo-red);
-}
-
-.card--on-beige {
-  background-color: var(--wp--preset--color--sand);
-  color: var(--wp--preset--color--rich-black);
-}
-
-.card--on-red {
-  background-color: var(--wp--preset--color--echo-red);
-  color: var(--wp--preset--color--white);
+.card-fit {
+  height: 100%;
 }
 
 /* Unselected state modifiers */
@@ -284,26 +281,121 @@ select {
   opacity: 0.9;
 }
 
+/* Card variations based on background context */
+.card--on-black {
+  border-radius: 15px;
+  background-color: var(--wp--preset--color--black);
+  color: var(--wp--preset--color--sand);
+}
+.card--on-black .card__divider {
+  color: var(--wp--preset--color--echo-red);
+  border-width: 4px;
+}
+.card--on-black .card__title {
+  color: var(--wp--preset--color--echo-red);
+}
+.card--on-black .card__details {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-black .card__button--on-black {
+  color: var(--wp--preset--color--echo-red);
+}
+
+.card--on-beige {
+  border-radius: 15px;
+  background-color: var(--wp--preset--color--sand);
+  color: var(--wp--preset--color--echo-red);
+}
+.card--on-beige .card__divider {
+  color: var(--wp--preset--color--echo-red);
+  border-width: 4px;
+}
+.card--on-beige .card__title {
+  color: var(--wp--preset--color--echo-red);
+}
+.card--on-beige .card__details {
+  color: var(--wp--preset--color--echo-red);
+}
+.card--on-beige .card__button--on-beige {
+  color: var(--wp--preset--color--echo-red);
+}
+
+.card--on-red {
+  border-radius: 15px;
+  background-color: var(--wp--preset--color--echo-red);
+  color: var(--wp--preset--color--sand);
+}
+.card--on-red .card__divider {
+  color: var(--wp--preset--color--echo-red);
+  border-width: 4px;
+}
+.card--on-red .card__title {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-red .card__details {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-red .card__button--on-red {
+  color: var(--wp--preset--color--sand);
+}
+
 /* Hover state modifiers */
 .card--on-black:hover {
+  border-radius: 15px;
   background-color: var(--wp--preset--color--echo-red);
-  border-color: var(--wp--preset--color--white);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: var(--wp--preset--color--sand);
+}
+.card--on-black:hover .card__divider {
+  color: var(--wp--preset--color--echo-red);
+  border-width: 4px;
+}
+.card--on-black:hover .card__title {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-black:hover .card__details {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-black:hover .card__button--on-black {
+  border-color: var(--wp--preset--color--sand);
+  color: var(--wp--preset--color--sand);
 }
 
 .card--on-beige:hover {
+  border-radius: 15px;
   background-color: var(--wp--preset--color--echo-red);
-  color: var(--wp--preset--color--white);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: var(--wp--preset--color--black);
+}
+.card--on-beige:hover .card__divider {
+  color: var(--wp--preset--color--echo-red);
+  border-width: 4px;
+}
+.card--on-beige:hover .card__title {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-beige:hover .card__details {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-beige:hover .card__button--on-beige {
+  color: var(--wp--preset--color--sand);
 }
 
 .card--on-red:hover {
-  background-color: var(--wp--preset--color--rich-black);
-  border-color: var(--wp--preset--color--echo-red);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: var(--wp--preset--color--black);
+  border-color: var(--wp--preset--color--black);
+}
+.card--on-red:hover .card__divider {
+  color: var(--wp--preset--color--black);
+  border-width: 4px;
+}
+.card--on-red:hover .card__title {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-red:hover .card__details {
+  color: var(--wp--preset--color--sand);
+}
+.card--on-red:hover .card__button--on-red {
+  color: var(--wp--preset--color--sand);
 }
 
 /* Card content styles */
@@ -314,26 +406,14 @@ select {
   margin-bottom: 0.5rem;
 }
 
-.card__description {
+.card__details {
   font-family: var(--wp--preset--font-family--global);
   font-size: var(--wp--preset--font-size--medium);
   margin-bottom: 1rem;
 }
 
-.card__button {
-  font-family: var(--wp--preset--font-family--global);
-  font-size: var(--wp--preset--font-size--medium);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.card__button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.card__divider {
+  border-width: 4px;
 }
 
 #circle {
@@ -360,7 +440,7 @@ body {
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 10rem;
   padding: 1rem;
   margin: 1rem;
 }
@@ -374,6 +454,10 @@ body {
   .talent-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.talent-group {
+  padding: 5.3rem;
 }
 
 .talent-card {
@@ -392,6 +476,8 @@ body {
 }
 .talent-card:hover .talent-info {
   mix-blend-mode: exclusion;
+  transition: all 0.3s ease;
+  display: none;
 }
 
 .image-container {
@@ -427,7 +513,7 @@ body {
 .talent-info {
   position: absolute;
   top: 50%;
-  width: 65%;
+  width: 50%;
   right: 0px;
   transform: translate3d(50px, -70px, 0px);
   text-align: left;

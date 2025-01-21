@@ -175,6 +175,15 @@
 				"src": [
 					"file:assets/fonts/roc-grotesk-extra-wide-bold.otf"
 				]
+			},
+			{
+				"fontFamily": "Roc Grotesk",
+				"fontStretch": "normal",
+				"fontStyle": "normal",
+				"fontWeight": "900",
+				"src": [
+					"file:assets/fonts/roc-grotesk-extra-wide-extra-bold.otf"
+				]
 			}
 			],
 			"fontFamily": "Roc Grotesk",
@@ -185,8 +194,8 @@
 		"fontSizes": [
 		  {
 			"fluid": {
-			  "max": "0.707rem",
-			  "min": "0.55rem"
+				"min": "0.55rem",
+			  	"max": "0.707rem"
 			},
 			"name": "Small",
 			"size": "0.707rem",
@@ -194,8 +203,8 @@
 		  },
 		  {
 			"fluid": {
-			  "max": "1rem",
-			  "min": "0.707rem"
+			  	"min": "0.707rem",
+			  	"max": "1rem"
 			},
 			"name": "Medium",
 			"size": "1rem",
@@ -203,29 +212,29 @@
 		  },
 		  {
 			"fluid": {
-			  "max": "1.999rem",
-			  "min": "1.414rem"
+				"max": "1.6rem",
+				"min": "1.33rem"
 			},
 			"name": "Large",
-			"size": "1.999rem",
+			"size": "1.6rem",
 			"slug": "large"
 		  },
 		  {
 			"fluid": {
-			  "max": "2.827rem",
-			  "min": "2rem"
+				"min": "1.75rem",
+			  	"max": "2.5rem"
 			},
 			"name": "Extra Large",
-			"size": "2.827rem",
+			"size": "2.5rem",
 			"slug": "x-large"
 		  },
 		  {
 			"fluid": {
-			  "max": "3.998rem",
-			  "min": "2.9rem"
+				"min": "2.5rem",
+			  "max": "2.95rem"
 			},
 			"name": "Extra Extra Large",
-			"size": "3.998rem",
+			"size": "2.95rem",
 			"slug": "xx-large"
 		  }
 		],
@@ -258,7 +267,7 @@
 		"link": {
 		  ":hover": {
 			"color": {
-			  "text": "var(--wp--preset--color--snow-day)"
+			  "text": "var(--wp--preset--color--sand)"
 			}
 		  },
 		  "color": {
@@ -266,7 +275,6 @@
 		  },
 		  "typography": {
 			"fontFamily": "var(--wp--preset--font-family--global)",
-			"fontSize": "var(--wp--preset--font-size--large)",
 			"fontStyle": "normal",
 			"fontWeight": "200"
 		  }

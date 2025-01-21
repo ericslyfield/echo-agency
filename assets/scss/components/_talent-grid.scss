@@ -1,7 +1,7 @@
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 10rem;
   padding: 1rem;
   margin: 1rem;
 
@@ -13,6 +13,10 @@
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
+}
+
+.talent-group{
+  padding: 5.3rem;
 }
 
 .talent-card {
@@ -35,6 +39,8 @@
 
     .talent-info {
       mix-blend-mode: exclusion;
+      transition: all 0.3s ease;
+      display: none;
     }
   }
 }
@@ -75,7 +81,7 @@
 .talent-info {
   position: absolute;
   top: 50%;
-  width: 65%;
+  width: 50%;
   right: 0px;
   transform: translate3d(50px, -70px, 0px);
   text-align: left;
