@@ -274,9 +274,7 @@
 			"text": "var(--wp--preset--color--rich-black)"
 		  },
 		  "typography": {
-			"fontFamily": "var(--wp--preset--font-family--global)",
-			"fontStyle": "normal",
-			"fontWeight": "200"
+			"fontFamily": "var(--wp--preset--font-family--global)"
 		  }
 		}
 	  },

@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10rem;
-  padding: 1rem;
-  margin: 1rem;
 
   @media (max-width: 781px) {
     grid-template-columns: repeat(2, 1fr);
@@ -81,9 +79,9 @@
 .talent-info {
   position: absolute;
   top: 50%;
-  width: 50%;
-  right: 0px;
-  transform: translate3d(50px, -70px, 0px);
+  width: 33%;
+  right: 15px;
+  transform: translate3d(-33%, -50%, 0);
   text-align: left;
   z-index: 1;
   transition: opacity 0.3s ease-in-out;

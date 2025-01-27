@@ -416,6 +416,29 @@ select {
   border-width: 4px;
 }
 
+.stagger-cards .wp-block-post-template {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--wp--preset--spacing--30);
+}
+
+.stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
+  transform: translateY(11rem);
+}
+
+/* Keep existing grid and height styles */
+.stagger-cards .wp-block-post-template {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--wp--preset--spacing--30);
+}
+
+.stagger-cards .wp-block-post-template > li,
+.stagger-cards .wp-block-post-template > li > div,
+.stagger-cards .card--on-black {
+  height: 100%;
+}
+
 #circle {
   position: relative;
   transform-style: preserve-3d;
@@ -441,8 +464,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10rem;
-  padding: 1rem;
-  margin: 1rem;
 }
 @media (max-width: 781px) {
   .talent-grid {
@@ -513,9 +534,9 @@ body {
 .talent-info {
   position: absolute;
   top: 50%;
-  width: 50%;
-  right: 0px;
-  transform: translate3d(50px, -70px, 0px);
+  width: 33%;
+  right: 15px;
+  transform: translate3d(-33%, -50%, 0);
   text-align: left;
   z-index: 1;
   transition: opacity 0.3s ease-in-out;
