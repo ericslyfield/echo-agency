@@ -26,7 +26,8 @@ html,body
 {
 	margin: 0px;
 	padding: 0px;
-	overflow: visible;
+	overflow-x: clip;
+	overflow-y: auto;
 }
 
 html, body, div {
@@ -61,7 +62,7 @@ body {
 /* Lists */
 
 ol, ul {
-	list-style: none;
+	list-style-position: inside;
 	padding: 0;
 }
 
@@ -112,4 +113,8 @@ select{
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
+}
+
+.remove-bottom-spacing-0{
+	margin-bottom: 0;
 }

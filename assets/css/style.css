@@ -23,7 +23,8 @@ html {
 html, body {
   margin: 0px;
   padding: 0px;
-  overflow: visible;
+  overflow-x: clip;
+  overflow-y: auto;
 }
 
 html, body, div {
@@ -56,7 +57,7 @@ body {
 
 /* Lists */
 ol, ul {
-  list-style: none;
+  list-style-position: inside;
   padding: 0;
 }
 
@@ -104,6 +105,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.remove-bottom-spacing-0 {
+  margin-bottom: 0;
+}
+
 /* Set a special hover color */
 .wp-block-button {
   transition: all 0.3s ease;
@@ -185,6 +190,16 @@ select {
   padding: 1em;
 }
 
+@media (max-width: 768px) {
+  .reverse-on-mobile {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 390px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
 .press-feature-container {
   padding: 2rem;
   background-color: #f5f2ee;
@@ -552,9 +567,9 @@ body {
 .talent-info {
   position: absolute;
   top: 50%;
-  width: 33%;
-  right: 15px;
-  transform: translate3d(-33%, -50%, 0);
+  width: 60%;
+  right: 0;
+  transform: translate3d(25%, -50%, 0);
   text-align: left;
   z-index: 1;
   transition: opacity 0.3s ease-in-out;
@@ -566,7 +581,7 @@ body {
 }
 
 .wp-block-post-title a {
-  word-break: break-word;
+  word-break: auto-phrase;
 }
 
 .wp-block-echo-agency-artist-view-more {

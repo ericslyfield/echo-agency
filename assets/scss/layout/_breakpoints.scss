@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .reverse-on-mobile {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 390px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
