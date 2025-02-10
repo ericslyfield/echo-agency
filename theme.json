@@ -134,107 +134,92 @@
 		}
 	  },
 	  "typography": {
-		"customFontSize": false,
+		"customFontSize": true,
 		"defaultFontSizes": false,
 		"fluid": true,
 		"fontFamilies": [
-		  {
-			"fontFace": [
 			{
-			"fontFamily": "Roc Grotesk",
-			"fontStretch": "normal",
-			"fontStyle": "normal",
-			"fontWeight": "200",
-			"src": [
-				"file:assets/fonts/roc-grotesk-extra-wide-extra-light.otf"
-			]
-			},
-			{
-			"fontFamily": "Roc Grotesk",
-			"fontStretch": "normal",
-			"fontStyle": "normal",
-			"fontWeight": "300",
-			"src": [
-				"file:assets/fonts/roc-grotesk-extra-wide-light.otf"
-			]
-			},
-			{
-			"fontFamily": "Roc Grotesk",
-			"fontStretch": "normal",
-			"fontStyle": "normal",
-			"fontWeight": "500",
-			"src": [
-				"file:assets/fonts/roc-grotesk-extra-wide-medium.otf"
-			]
-			},
-			{
-				"fontFamily": "Roc Grotesk",
-				"fontStretch": "normal",
-				"fontStyle": "normal",
-				"fontWeight": "700",
-				"src": [
-					"file:assets/fonts/roc-grotesk-extra-wide-bold.otf"
-				]
-			},
-			{
-				"fontFamily": "Roc Grotesk",
-				"fontStretch": "normal",
-				"fontStyle": "normal",
-				"fontWeight": "900",
-				"src": [
-					"file:assets/fonts/roc-grotesk-extra-wide-extra-bold.otf"
-				]
+			  "fontFamily": "\"Roc Grotesk Extra Wide\"",
+			  "name": "Roc Grotesk Extra Wide",
+			  "slug": "roc-grotesk",
+			  "fontFace": [
+				{
+				  "fontFamily": "Roc Grotesk Extra Wide",
+				  "fontStretch": "normal",
+				  "fontStyle": "normal",
+				  "fontWeight": "200",
+				  "src": [
+					"file:./assets/fonts/roc-grotesk-extra-wide-extra-light.otf"
+				  ]
+				},
+				{
+				  "fontFamily": "Roc Grotesk Extra Wide",
+				  "fontStretch": "normal",
+				  "fontStyle": "normal",
+				  "fontWeight": "300",
+				  "src": [
+					"file:./assets/fonts/roc-grotesk-extra-wide-light.otf"
+				  ]
+				},
+				{
+				  "fontFamily": "Roc Grotesk Extra Wide",
+				  "fontStretch": "normal",
+				  "fontStyle": "normal",
+				  "fontWeight": "500",
+				  "src": [
+					"file:./assets/fonts/roc-grotesk-extra-wide-medium.otf"
+				  ]
+				},
+				{
+				  "fontFamily": "Roc Grotesk Extra Wide",
+				  "fontStretch": "normal",
+				  "fontStyle": "normal",
+				  "fontWeight": "700",
+				  "src": [
+					"file:./assets/fonts/roc-grotesk-extra-wide-bold.otf"
+				  ]
+				},
+				{
+				  "fontFamily": "Roc Grotesk Extra Wide",
+				  "fontStretch": "normal",
+				  "fontStyle": "normal",
+				  "fontWeight": "800",
+				  "src": [
+					"file:./assets/fonts/roc-grotesk-extra-wide-extra-bold.otf"
+				  ]
+				}
+			  ]
 			}
-			],
-			"fontFamily": "Roc Grotesk",
-			"name": "Roc Grotesk Extra Wide",
-			"slug": "global"
-		  }
-		],
+		  ],
 		"fontSizes": [
 		  {
-			"fluid": {
-				"min": "0.55rem",
-			  	"max": "0.707rem"
-			},
+			"fluid": true,
 			"name": "Small",
-			"size": "0.707rem",
+			"size": "20px",
 			"slug": "small"
 		  },
 		  {
-			"fluid": {
-			  	"min": "0.707rem",
-			  	"max": "1rem"
-			},
+			"fluid": true,
 			"name": "Medium",
-			"size": "1rem",
+			"size": "30px",
 			"slug": "medium"
 		  },
 		  {
-			"fluid": {
-				"max": "1.6rem",
-				"min": "1.33rem"
-			},
+			"fluid": true,
 			"name": "Large",
-			"size": "1.6rem",
+			"size": "40px",
 			"slug": "large"
 		  },
 		  {
-			"fluid": {
-				"min": "1.75rem",
-			  	"max": "2.5rem"
-			},
+			"fluid": true,
 			"name": "Extra Large",
-			"size": "2.5rem",
+			"size": "72px",
 			"slug": "x-large"
 		  },
 		  {
-			"fluid": {
-				"min": "2.5rem",
-			  "max": "2.95rem"
-			},
+			"fluid": true,
 			"name": "Extra Extra Large",
-			"size": "2.95rem",
+			"size": "92px",
 			"slug": "xx-large"
 		  }
 		],
@@ -257,9 +242,14 @@
 			"fontSize": "var(--wp--preset--font-size--large)"
 		  }
 		},
+		"h3": {
+			"typography": {
+			  "fontSize": "var(--wp--preset--font-size--medium)"
+			}
+		  },
 		"heading": {
 		  "typography": {
-			"fontFamily": "var(--wp--preset--font-family--global)",
+			"fontFamily": "var(--wp--preset--font-family--roc-grotesk)",
 			"fontStyle": "normal",
 			"fontWeight": "200"
 		  }

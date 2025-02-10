@@ -1,0 +1,22 @@
+/* Create the text content wrapper */
+.wp-block-navigation-item__content::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(0);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the original text */
+.wp-block-navigation-item__content:hover {
+    transform: translateY(-100%);
+}
+
+/* Hover effect for the duplicate text */
+.wp-block-navigation-item__content:hover::before {
+    opacity: 1;
+    transform: translateY(-100%);
+}

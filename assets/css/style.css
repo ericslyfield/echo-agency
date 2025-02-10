@@ -156,18 +156,31 @@ select {
   align-items: center;
 }
 
-.about-link.p {
-  font-size: 92px !important;
+@font-face {
+  font-family: "Roc Grotesk Extra Wide";
+  font-weight: 200;
+  src: url("../fonts/roc-grotesk-extra-wide-extra-light.otf");
 }
-
-.x-large {
-  font-size: var(--wp--preset--font-size--x-large) !important;
+@font-face {
+  font-family: "Roc Grotesk Extra Wide";
+  font-weight: 300;
+  src: url("../fonts/roc-grotesk-extra-wide-light.otf");
 }
-
-.xx-large {
-  font-size: var(--wp--preset--font-size--xx-large) !important;
+@font-face {
+  font-family: "Roc Grotesk Extra Wide";
+  font-weight: 500;
+  src: url("../fonts/roc-grotesk-extra-wide-medium.otf");
 }
-
+@font-face {
+  font-family: "Roc Grotesk Extra Wide";
+  font-weight: 700;
+  src: url("../fonts/roc-grotesk-extra-wide-bold.otf");
+}
+@font-face {
+  font-family: "Roc Grotesk Extra Wide";
+  font-weight: 800;
+  src: url("../fonts/roc-grotesk-extra-wide-extra-bold.otf");
+}
 .circular-container {
   /* Make the container behave as an inline-block to wrap content */
   display: inline-block;
@@ -465,13 +478,6 @@ select {
   transform: translateY(11rem);
 }
 
-/* Keep existing grid and height styles */
-.stagger-cards .wp-block-post-template {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--wp--preset--spacing--30);
-}
-
 #circle {
   position: relative;
   transform-style: preserve-3d;
@@ -491,6 +497,29 @@ select {
 }
 body {
   place-items: center;
+}
+
+/* Create the text content wrapper */
+.wp-block-navigation-item__content::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(0);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the original text */
+.wp-block-navigation-item__content:hover {
+  transform: translateY(-100%);
+}
+
+/* Hover effect for the duplicate text */
+.wp-block-navigation-item__content:hover::before {
+  opacity: 1;
+  transform: translateY(-100%);
 }
 
 .talent-grid {

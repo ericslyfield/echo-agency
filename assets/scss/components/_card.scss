@@ -229,19 +229,6 @@
 .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
     transform: translateY(11rem);
 }
-  
-/* Keep existing grid and height styles */
-.stagger-cards .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--wp--preset--spacing--30);
-}
-  
-.stagger-cards .wp-block-post-template > li,
-.stagger-cards .wp-block-post-template > li > div,
-.stagger-cards .card--on-black {
-    // height: 100%
-}
 
 // .card__button {
 //     font-family: var(--wp--preset--font-family--global);

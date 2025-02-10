@@ -1,52 +1,34 @@
-// @font-face {
-//     font-family: 'Roc Grotesk Wide Extra Light';
-//     src: url('themes/echo-agency/assets/fonts/roc-grotesk-extra-wide-extra-light.otf');
-// }
-
-// .roc-grotesk-wide-x-light {
-//     font-family: 'Roc Grotesk Extra Wide Extra Light';
-// }
-
-// // Light
-
-// @font-face {
-//     font-family: 'Roc Grotesk Wide Light';
-//     src: url('themes/echo-agency/assets/fonts/roc-grotesk-extra-wide-light.otf');
-// }
-
-// .roc-grotesk-wide-light {
-//     font-family: 'Roc Grotesk Extra Wide Light';
-// }
-
-// // Medium
-
-// @font-face {
-//     font-family: 'Roc Grotesk Wide Medium';
-//     src: url('themes/echo-agency/assets/fonts/roc-grotesk-extra-wide-medium.otf');
-// }
-
-// .roc-grotesk-wide-medium {
-//     font-family: 'Roc Grotesk Extra Wide Medium';
-// }
-
-// // Bold
-
-// @font-face {
-//     font-family: 'Roc Grotesk Wide Bold';
-//     src: url('themes/echo-agency/assets/fonts/roc-grotesk-extra-wide-bold.otf');
-// }
-
-// .roc-grotesk-wide-bold {
-//     font-family: 'Roc Grotesk Extra Wide Bold';
-// }
-.about-link.p{
-    font-size: 92px !important;
+// Extra Light
+@font-face {
+    font-family: 'Roc Grotesk Extra Wide';
+    font-weight: 200;  
+    src: url('../fonts/roc-grotesk-extra-wide-extra-light.otf');
 }
 
-.x-large{
-    font-size: var(--wp--preset--font-size--x-large) !important;
+// Light
+@font-face {
+    font-family: 'Roc Grotesk Extra Wide';
+    font-weight: 300;
+    src: url('../fonts/roc-grotesk-extra-wide-light.otf');
 }
 
-.xx-large{
-    font-size: var(--wp--preset--font-size--xx-large) !important;
+// Medium
+@font-face {
+    font-family: 'Roc Grotesk Extra Wide';
+    font-weight: 500;
+    src: url('../fonts/roc-grotesk-extra-wide-medium.otf');
+}
+
+// Bold
+@font-face {
+    font-family: 'Roc Grotesk Extra Wide';
+    font-weight: 700;
+    src: url('../fonts/roc-grotesk-extra-wide-bold.otf');
+}
+
+// Extra Bold
+@font-face {
+    font-family: 'Roc Grotesk Extra Wide';
+    font-weight: 800; 
+    src: url('../fonts/roc-grotesk-extra-wide-extra-bold.otf');
 }
