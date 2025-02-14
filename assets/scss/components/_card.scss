@@ -219,15 +219,21 @@
 .card__divider{
     border-width: 4px;
 }
-
-.stagger-cards .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--wp--preset--spacing--30);
-}
   
+@media only screen and (min-width: 420px) {
+    .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
+        transform: translateY(10rem);
+    }
+}
 .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
-    transform: translateY(11rem);
+    transform: translateY(10rem);
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
+        transform: none;
+    }
 }
 
 // .card__button {

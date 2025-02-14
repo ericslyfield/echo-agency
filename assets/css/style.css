@@ -109,6 +109,27 @@ select {
   margin-bottom: 0;
 }
 
+.wp-block-cover .wp-block-cover__image-background {
+  border-top-right-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+  border: none;
+  bottom: 0;
+  box-shadow: none;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
 /* Set a special hover color */
 .wp-block-button {
   transition: all 0.3s ease;
@@ -154,6 +175,30 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.add-scroll-container {
+  border-radius: 16px;
+  height: 50%;
+  width: 70%;
+  padding: 3.5rem 1.5rem;
+  scroll-padding: 3.5em;
+  scrollbar-color: #eb3425 #D6C6B0;
+  scrollbar-width: thin;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.shift-left {
+  margin-left: -3.5rem;
+}
+
+.shift-right {
+  margin-right: -3.5rem;
+}
+
+.eb-post-carousel-wrapper.style-4 .ebpg-carousel-post-holder:hover .ebpg-entry-wrapper > * {
+  transform: translateY(0px) !important;
 }
 
 @font-face {
@@ -468,16 +513,21 @@ select {
   border-width: 4px;
 }
 
-.stagger-cards .wp-block-post-template {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--wp--preset--spacing--30);
+@media only screen and (min-width: 420px) {
+  .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
+    transform: translateY(10rem);
+  }
 }
-
 .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
-  transform: translateY(11rem);
+  transform: translateY(10rem);
 }
 
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .stagger-cards .wp-block-post-template > li:nth-child(3n+2) {
+    transform: none;
+  }
+}
 #circle {
   position: relative;
   transform-style: preserve-3d;
@@ -499,27 +549,35 @@ body {
   place-items: center;
 }
 
-/* Create the text content wrapper */
-.wp-block-navigation-item__content::before {
-  content: attr(data-text);
+.rolling-text {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.rolling-text span {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.rolling-text .original,
+.rolling-text .alternate {
+  white-space: nowrap;
+}
+
+.rolling-text .alternate {
   position: absolute;
-  top: 100%;
   left: 0;
-  width: 100%;
+  transform: translateY(100%);
+}
+
+.rolling-text:hover .original {
+  transform: translateY(-100%);
+}
+
+.rolling-text:hover .alternate {
   transform: translateY(0);
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover effect for the original text */
-.wp-block-navigation-item__content:hover {
-  transform: translateY(-100%);
-}
-
-/* Hover effect for the duplicate text */
-.wp-block-navigation-item__content:hover::before {
-  opacity: 1;
-  transform: translateY(-100%);
 }
 
 .talent-grid {

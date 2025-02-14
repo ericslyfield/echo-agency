@@ -22,7 +22,6 @@ if (file_exists($autoloader_path)) {
     error_log('Echo Agency Theme: Autoloader file not found');
 }
 
-
 // Register Block Template Support for Classic Themes Fallback
 // function theme_setup() {
      // add_theme_support('block-template-parts');

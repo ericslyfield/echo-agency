@@ -49,6 +49,8 @@ class Styling {
         $this->register_script('ripple-click', '/assets/js/ripple-click.js');
         //Registers Ripple Hover Animation
         $this->register_script('ripple-hover', '/assets/js/ripple-hover.js');
+        //Registers Rolling Text
+        $this->register_script('rolling-text', '/assets/js/rolling-text.js');
         // GSAP
         $this->register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js');      
         // Curtains
@@ -87,5 +89,6 @@ private function register_script($handle, $path) {
         wp_enqueue_script('scripts');
         wp_enqueue_script('link-hover');
         wp_enqueue_script('ripple-click');
+        wp_enqueue_script('rolling-text');
     }
 }

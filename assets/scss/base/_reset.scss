@@ -118,3 +118,25 @@ select{
 .remove-bottom-spacing-0{
 	margin-bottom: 0;
 }
+
+
+
+.wp-block-cover .wp-block-cover__image-background{
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    border: none;
+    bottom: 0;
+    box-shadow: none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none;
+    object-fit: cover;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
