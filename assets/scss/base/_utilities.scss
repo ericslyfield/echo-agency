@@ -31,8 +31,7 @@
 
   .wp-block-media-text__media{
     border-radius: 50%;
-    height: 500px;
-    width: 500px;
+    aspect-ratio: 1;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -61,4 +60,9 @@
 
   .eb-post-carousel-wrapper.style-4 .ebpg-carousel-post-holder:hover .ebpg-entry-wrapper>* {
     transform: translateY(0px) !important;
+}
+
+.disable-link{
+  pointer-events: none;
+  cursor: default;
 }
