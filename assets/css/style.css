@@ -230,6 +230,37 @@ select {
   font-weight: 800;
   src: url("../fonts/roc-grotesk-extra-wide-extra-bold.otf");
 }
+/* Desktop (default styles) */
+.font-size__mobile--large {
+  font-size: var(--wp--preset--font-size--large);
+}
+
+.font-size__desktop--x-large {
+  font-size: var(--wp--preset--font-size--x-large);
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .text-large-on-mobile {
+    font-size: 1.5rem !important; /* Adjusts to large font size */
+    line-height: 1.2;
+  }
+}
+/* Mobile */
+@media (max-width: 390px) {
+  .text-large-on-mobile {
+    font-size: var(--wp--preset--font-size--large);
+  }
+}
+/* Template for additional classes */
+@media (max-width: 768px) {
+  /* Add tablet-specific classes here */
+}
+@media (max-width: 420px) {
+  .font-size__mobile--large {
+    font-size: var(--wp--preset--font-size--large);
+  }
+}
 .circular-container {
   /* Make the container behave as an inline-block to wrap content */
   display: inline-block;
@@ -260,40 +291,6 @@ select {
 @media (max-width: 390px) {
   .hide-on-mobile {
     display: none;
-  }
-}
-/* Mobile reordering styles */
-@media screen and (max-width: 767px) {
-  /* Make parent container a flex container */
-  .wp-block-group {
-    display: flex;
-    flex-direction: column;
-  }
-  /* Client query title */
-  .wp-block-post-terms {
-    order: 1;
-  }
-  /* Media image container */
-  .wp-block-media-text {
-    order: 2;
-  }
-  /* Source link and its containers */
-  .circular-container {
-    order: 3;
-  }
-  /* Post carousel */
-  .wp-block-essential-blocks-post-carousel {
-    order: 4;
-  }
-  /* Additional styling to ensure proper spacing */
-  .wp-block-group > * {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  /* Reset any existing margins that might interfere */
-  .wp-block-media-text__content {
-    margin: 0;
-    padding: 1rem 0;
   }
 }
 .press-feature-container {

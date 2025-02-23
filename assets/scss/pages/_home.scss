@@ -1,0 +1,36 @@
+/* Desktop (default styles) */
+.font-size__mobile--large {
+    font-size: var(--wp--preset--font-size--large);  
+}
+
+  .font-size__desktop--x-large{
+    font-size: var(--wp--preset--font-size--x-large);
+  }
+  
+  /* Tablet */
+  @media screen and (max-width: 768px) {
+    .text-large-on-mobile {
+      font-size: 1.5rem !important; /* Adjusts to large font size */
+      line-height: 1.2;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 390px) {
+    .text-large-on-mobile{
+        font-size: var(--wp--preset--font-size--large);
+      }
+  }
+  
+  /* Template for additional classes */
+  @media (max-width: 768px) {
+    /* Add tablet-specific classes here */
+  }
+  
+  @media (max-width: 420px) {
+    .font-size__mobile--large{
+        font-size: var(--wp--preset--font-size--large);
+    }
+
+
+  }
