@@ -13,7 +13,7 @@ html {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 html {
@@ -135,22 +135,6 @@ select {
   transition: all 0.3s ease;
 }
 
-.card-style {
-  border: 2px solid #ccc; /* Adjust border color as needed */
-  border-radius: 8px; /* Optional, for rounded corners */
-  min-height: 350px; /* Set the minimum height */
-  padding: 16px; /* Optional, for inner padding */
-  display: flex; /* Flexbox to help with layout if needed */
-  flex-direction: column; /* Align elements vertically */
-  box-sizing: border-box; /* Ensures padding is included in the total height calculation */
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.rounded {
-  border-radius: 15px;
-}
-
 .z-5 {
   z-index: 5;
 }
@@ -203,6 +187,11 @@ select {
 .disable-link {
   pointer-events: none;
   cursor: default;
+}
+
+.wp-block-post-terms .wp-block-post-terms__separator {
+  vertical-align: top;
+  white-space: pre-wrap;
 }
 
 @font-face {
@@ -261,6 +250,96 @@ select {
     font-size: var(--wp--preset--font-size--large);
   }
 }
+/* Desktop (default styles) */
+.your-class {
+  /* Your desktop styles here */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .your-class {
+    /* Your tablet styles here */
+  }
+}
+/* Mobile */
+@media (max-width: 390px) {
+  .your-class {
+    /* Your mobile styles here */
+  }
+}
+/* Template for additional classes */
+@media (max-width: 768px) {
+  /* Add tablet-specific classes here */
+}
+@media (max-width: 390px) {
+  /* Add mobile-specific classes here */
+}
+/* Desktop (default styles) */
+.your-class {
+  /* Your desktop styles here */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .your-class {
+    /* Your tablet styles here */
+  }
+}
+/* Mobile */
+@media (max-width: 390px) {
+  .your-class {
+    /* Your mobile styles here */
+  }
+}
+/* Template for additional classes */
+@media (max-width: 768px) {
+  /* Add tablet-specific classes here */
+}
+@media (max-width: 390px) {
+  /* Add mobile-specific classes here */
+}
+/* Desktop (default styles) */
+.your-class {
+  /* Your desktop styles here */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .your-class {
+    /* Your tablet styles here */
+  }
+}
+/* Mobile */
+@media (max-width: 390px) {
+  .your-class {
+    /* Your mobile styles here */
+  }
+}
+/* Template for additional classes */
+@media (max-width: 768px) {
+  /* Add tablet-specific classes here */
+}
+@media (max-width: 390px) {
+  /* Add mobile-specific classes here */
+}
+/* Styles for all items */
+.wp-block-navigation .wp-block-navigation-item__content {
+  margin-right: 2.25rem;
+  text-transform: capitalize;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content:not(:hover) {
+  filter: blur(8px);
+}
+
+.wp-block-navigation__responsive-container-close {
+  padding: 1.5rem 2.25rem 3.5rem 2.25rem;
+}
+
+wp-block-navigation__responsive-container-content {
+  padding: 25px 45px;
+}
+
 .circular-container {
   /* Make the container behave as an inline-block to wrap content */
   display: inline-block;
@@ -287,10 +366,52 @@ select {
   .reverse-on-mobile {
     flex-direction: column-reverse;
   }
-}
-@media (max-width: 390px) {
   .hide-on-mobile {
-    display: none;
+    display: none !important;
+  }
+}
+/* Hide mobile elements by default (on desktop) */
+.mobile-navigation,
+.mobile-title {
+  display: none !important;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 767px) {
+  .desktop-navigation,
+  .desktop-title {
+    display: none !important;
+  }
+  .center-on-mobile {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: var(--wp--preset--spacing--50 !important);
+    padding-left: var(--wp--preset--spacing--50 !important);
+  }
+  .mobile-navigation,
+  .mobile-title {
+    display: block !important;
+  }
+  .wp-block-columns.alignfull {
+    flex-direction: column !important;
+  }
+  .image-column {
+    order: 3 !important; /* Moves image below title */
+    flex-basis: 100% !important;
+    width: 100% !important;
+  }
+  .content-column {
+    order: 4 !important; /* Moves content after image */
+    flex-basis: 100% !important;
+    width: 100% !important;
+  }
+  .wp-block-cover {
+    min-height: 300px !important;
+  }
+  .circular-container {
+    padding: 30px !important;
+    min-height: auto !important;
   }
 }
 .press-feature-container {
@@ -356,6 +477,22 @@ select {
 .press-thumbnails .blocks-gallery-item__caption {
   text-align: center;
   margin-top: 1rem;
+}
+
+.card-style {
+  border: 2px solid #ccc; /* Adjust border color as needed */
+  border-radius: 8px; /* Optional, for rounded corners */
+  min-height: 350px; /* Set the minimum height */
+  padding: 16px; /* Optional, for inner padding */
+  display: flex; /* Flexbox to help with layout if needed */
+  flex-direction: column; /* Align elements vertically */
+  box-sizing: border-box; /* Ensures padding is included in the total height calculation */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rounded {
+  border-radius: 15px;
 }
 
 /* Base card styles */
@@ -580,41 +717,51 @@ select {
     transform: rotateY(0) rotateX(20deg);
   }
 }
-body {
-  place-items: center;
+.ebpg-entry-meta-items {
+  pointer-events: none;
 }
 
-.rolling-text {
+/* Split Text Hover Effect CSS */
+.split-text-link {
   position: relative;
-  overflow: hidden;
   display: inline-block;
+  overflow: hidden;
+  padding: 0;
+  transition: all 0.3s ease;
 }
 
-.rolling-text span {
+/* Style for both the original and hover text */
+.split-text-link span {
   display: inline-block;
   position: relative;
   transition: transform 0.3s ease;
 }
 
-.rolling-text .original,
-.rolling-text .alternate {
-  white-space: nowrap;
-}
-
-.rolling-text .alternate {
-  position: absolute;
-  left: 0;
-  transform: translateY(100%);
-}
-
-.rolling-text:hover .original {
-  transform: translateY(-100%);
-}
-
-.rolling-text:hover .alternate {
+/* Original text that moves up when hovered */
+.split-text-link .original {
   transform: translateY(0);
 }
 
+/* Hover state - original text moves up */
+.split-text-link:hover .original {
+  transform: translateY(-100%);
+}
+
+/* Hover text that moves up into view */
+.split-text-link .hover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(0);
+}
+
+/* Hover state - hover text moves up */
+.split-text-link:hover .hover {
+  transform: translateY(-100%);
+}
+
+/* Optional: Different color for the hover text */
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -704,6 +851,36 @@ body {
 
 .wp-block-post-title a {
   word-break: auto-phrase;
+}
+
+/* Initial state for the fade-in and scale-text elements */
+.fade-in, .scale-text {
+  opacity: 0; /* Start as invisible */
+  filter: blur(8px); /* Initial blur of 8px */
+  transform: scale(5); /* Start with a very large size (5x original size) */
+  transition: opacity 2s ease-out, filter 2s ease-out, transform 2s ease-out; /* Smooth transitions */
+  will-change: opacity, filter, transform; /* Optimize performance */
+}
+
+/* When the element enters the viewport and becomes visible */
+.fade-in.visible, .scale-text.visible {
+  opacity: 1; /* Fully visible */
+  filter: blur(0); /* No blur (sharp focus) */
+  transform: scale(1); /* Scale down to its original size */
+}
+
+/* Initial state for the translate-up elements */
+.translate-up {
+  opacity: 0; /* Start as invisible */
+  transform: translateY(50px); /* Start 50px below final position */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transitions */
+  will-change: opacity, transform; /* Optimize performance */
+}
+
+/* When the element enters the viewport and becomes visible */
+.translate-up.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to final position */
 }
 
 .wp-block-echo-agency-artist-view-more {

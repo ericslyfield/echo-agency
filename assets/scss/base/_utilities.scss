@@ -1,17 +1,4 @@
-.card-style {
-    border: 2px solid #ccc; /* Adjust border color as needed */
-    border-radius: 8px; /* Optional, for rounded corners */
-    min-height: 350px; /* Set the minimum height */
-    padding: 16px; /* Optional, for inner padding */
-    display: flex; /* Flexbox to help with layout if needed */
-    flex-direction: column; /* Align elements vertically */
-    box-sizing: border-box; /* Ensures padding is included in the total height calculation */
-    object-fit: cover;
-  }
-
-  .rounded{
-    border-radius: 15px;
-  }
+  // Brings Items forward or backwards. Use sparingliy. This is rarely necessary.
 
   .z-5{
     z-index: 5;
@@ -65,4 +52,9 @@
 .disable-link{
   pointer-events: none;
   cursor: default;
+}
+
+.wp-block-post-terms .wp-block-post-terms__separator {
+  vertical-align: top;
+  white-space: pre-wrap;
 }

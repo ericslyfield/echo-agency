@@ -12,7 +12,7 @@
 		},
 		"core/buttons": {
 		  "spacing": {
-			"blockGap": true
+			"blockGap": null
 		  }
 		},
 		"core/group": {
@@ -123,7 +123,7 @@
 		"enabled": true
 	  },
 	  "spacing": {
-		"blockGap": false,
+		"blockGap": null,
 		"customSpacingSize": true,
 		"spacingScale": {
 		  "increment": 1.414,

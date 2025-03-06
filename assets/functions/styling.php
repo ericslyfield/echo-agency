@@ -51,6 +51,10 @@ class Styling {
         $this->register_script('ripple-hover', '/assets/js/ripple-hover.js');
         //Registers Rolling Text
         $this->register_script('rolling-text', '/assets/js/rolling-text.js');
+        //Observer
+        $this->register_script('observer', '/assets/js/observer.js');
+        //Registers Rolling Text
+        $this->register_script('responsive-nav', '/assets/js/responsive-nav.js');
         // GSAP
         $this->register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js');      
         // Curtains
@@ -87,8 +91,10 @@ private function register_script($handle, $path) {
     // Private method to enqueue registered scripts
     private function enqueue_registered_scripts() {
         wp_enqueue_script('scripts');
+        wp_enqueue_script('observer');
         wp_enqueue_script('link-hover');
         wp_enqueue_script('ripple-click');
         wp_enqueue_script('rolling-text');
+        wp_enqueue_script('responsive-nav');
     }
 }

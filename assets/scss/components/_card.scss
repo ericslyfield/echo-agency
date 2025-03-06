@@ -1,3 +1,18 @@
+.card-style {
+    border: 2px solid #ccc; /* Adjust border color as needed */
+    border-radius: 8px; /* Optional, for rounded corners */
+    min-height: 350px; /* Set the minimum height */
+    padding: 16px; /* Optional, for inner padding */
+    display: flex; /* Flexbox to help with layout if needed */
+    flex-direction: column; /* Align elements vertically */
+    box-sizing: border-box; /* Ensures padding is included in the total height calculation */
+    object-fit: cover;
+  }
+
+  .rounded{
+    border-radius: 15px;
+  }
+
 /* Base card styles */
 .wp-block-group.card-grid {
     display: grid;

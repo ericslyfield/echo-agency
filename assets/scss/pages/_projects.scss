@@ -1,0 +1,28 @@
+/* Desktop (default styles) */
+.your-class {
+    /* Your desktop styles here */
+  }
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .your-class {
+      /* Your tablet styles here */
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 390px) {
+    .your-class {
+      /* Your mobile styles here */
+    }
+  }
+  
+  /* Template for additional classes */
+  @media (max-width: 768px) {
+    /* Add tablet-specific classes here */
+  }
+  
+  @media (max-width: 390px) {
+    /* Add mobile-specific classes here */
+  }
+  

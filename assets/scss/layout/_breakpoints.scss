@@ -2,10 +2,63 @@
     .reverse-on-mobile {
         flex-direction: column-reverse;
     }
+
+    .hide-on-mobile {
+        display: none !important;
+    }
 }
 
-@media (max-width: 390px) {
-    .hide-on-mobile {
-        display: none;
+// Breaks..........
+
+
+/* Hide mobile elements by default (on desktop) */
+.mobile-navigation,
+.mobile-title {
+    display: none !important;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 767px) {
+    .desktop-navigation,
+    .desktop-title {
+        display: none !important;
+    }
+
+.center-on-mobile{
+    margin:0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: var(--wp--preset--spacing--50 !important);
+    padding-left: var(--wp--preset--spacing--50 !important);
+}
+    
+    .mobile-navigation,
+    .mobile-title {
+        display: block !important;
+    }
+    
+    .wp-block-columns.alignfull {
+        flex-direction: column !important;
+    }
+    
+    .image-column {
+        order: 3 !important; /* Moves image below title */
+        flex-basis: 100% !important;
+        width: 100% !important;
+    }
+    
+    .content-column {
+        order: 4 !important; /* Moves content after image */
+        flex-basis: 100% !important;
+        width: 100% !important;
+    }
+    
+    .wp-block-cover {
+        min-height: 300px !important;
+    }
+    
+    .circular-container {
+        padding: 30px !important;
+        min-height: auto !important;
     }
 }

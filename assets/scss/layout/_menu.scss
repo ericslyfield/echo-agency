@@ -1,0 +1,16 @@
+/* Styles for all items */
+.wp-block-navigation .wp-block-navigation-item__content {
+    margin-right: 2.25rem;
+    text-transform: capitalize;
+    }
+    .wp-block-navigation .wp-block-navigation-item__content:not(:hover){
+        filter: blur(8px);
+    }
+    
+    .wp-block-navigation__responsive-container-close {
+        padding: 1.5rem 2.25rem 3.5rem 2.25rem;
+    }
+    
+    wp-block-navigation__responsive-container-content{
+     padding: 25px 45px;
+    }
