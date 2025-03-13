@@ -325,11 +325,6 @@ select {
 /* Styles for all items */
 .wp-block-navigation .wp-block-navigation-item__content {
   margin-right: 2.25rem;
-  text-transform: capitalize;
-}
-
-.wp-block-navigation .wp-block-navigation-item__content:not(:hover) {
-  filter: blur(8px);
 }
 
 .wp-block-navigation__responsive-container-close {
@@ -338,6 +333,25 @@ select {
 
 wp-block-navigation__responsive-container-content {
   padding: 25px 45px;
+}
+
+/* Make all navigation text uppercase */
+.wp-block-navigation-item__content {
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* 
+ * Then we specify that the particular item being hovered
+ * should NOT be blurred
+ */
+.wp-block-navigation-item:hover > .wp-block-navigation-item__content {
+  filter: blur(0) !important; /* Remove blur from the specific hovered item */
+}
+
+/* Optional: Add some emphasis to the hovered item */
+.wp-block-navigation-item:hover {
+  transform: scale(1.05);
 }
 
 .circular-container {
@@ -724,7 +738,9 @@ wp-block-navigation__responsive-container-content {
 /* Split Text Hover Effect CSS */
 .split-text-link {
   position: relative;
-  display: inline-block;
+  display: inline-flex; /* Changed from inline-block to inline-flex */
+  justify-content: center; /* Added to center the text */
+  align-items: center; /* Added to center the text vertically */
   overflow: hidden;
   padding: 0;
   transition: all 0.3s ease;
@@ -733,13 +749,15 @@ wp-block-navigation__responsive-container-content {
 /* Style for both the original and hover text */
 .split-text-link span {
   display: inline-block;
-  position: relative;
   transition: transform 0.3s ease;
+  width: 100%;
+  text-align: center; /* Added to ensure text is centered */
 }
 
 /* Original text that moves up when hovered */
 .split-text-link .original {
   transform: translateY(0);
+  position: relative; /* Keep your original positioning */
 }
 
 /* Hover state - original text moves up */
@@ -761,7 +779,6 @@ wp-block-navigation__responsive-container-content {
   transform: translateY(-100%);
 }
 
-/* Optional: Different color for the hover text */
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,10 +1,6 @@
 /* Styles for all items */
 .wp-block-navigation .wp-block-navigation-item__content {
     margin-right: 2.25rem;
-    text-transform: capitalize;
-    }
-    .wp-block-navigation .wp-block-navigation-item__content:not(:hover){
-        filter: blur(8px);
     }
     
     .wp-block-navigation__responsive-container-close {
@@ -14,3 +10,23 @@
     wp-block-navigation__responsive-container-content{
      padding: 25px 45px;
     }
+
+/* Make all navigation text uppercase */
+.wp-block-navigation-item__content {
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  
+  /* 
+   * Then we specify that the particular item being hovered
+   * should NOT be blurred
+   */
+  .wp-block-navigation-item:hover > .wp-block-navigation-item__content {
+    filter: blur(0) !important; /* Remove blur from the specific hovered item */
+  }
+  
+  /* Optional: Add some emphasis to the hovered item */
+  .wp-block-navigation-item:hover {
+    transform: scale(1.05);
+  }

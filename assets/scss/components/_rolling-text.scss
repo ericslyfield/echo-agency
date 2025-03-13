@@ -1,7 +1,9 @@
 /* Split Text Hover Effect CSS */
 .split-text-link {
   position: relative;
-  display: inline-block;
+  display: inline-flex; /* Changed from inline-block to inline-flex */
+  justify-content: center; /* Added to center the text */
+  align-items: center; /* Added to center the text vertically */
   overflow: hidden;
   padding: 0;
   transition: all 0.3s ease;
@@ -10,13 +12,15 @@
 /* Style for both the original and hover text */
 .split-text-link span {
   display: inline-block;
-  position: relative;
   transition: transform 0.3s ease;
+  width: 100%;
+  text-align: center; /* Added to ensure text is centered */
 }
 
 /* Original text that moves up when hovered */
 .split-text-link .original {
   transform: translateY(0);
+  position: relative; /* Keep your original positioning */
 }
 
 /* Hover state - original text moves up */
@@ -37,9 +41,3 @@
 .split-text-link:hover .hover {
   transform: translateY(-100%);
 }
-
-/* Optional: Different color for the hover text */
-.split-text-link .hover {
-  // color: #000; /* Change this to your preferred hover color */
-}
-

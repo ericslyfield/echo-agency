@@ -10,6 +10,7 @@
         window.location.href.indexOf('/wp-login.php') > -1) {
       return; // Exit if in admin area
     }
+    
     // Select all links that don't already have the split-text-link class
     // Use custom selector if available, otherwise use default
     const selector = window.splitTextCustomSelector || 
@@ -18,13 +19,35 @@
     
     // Process each link
     links.forEach(function(link) {
-      // Skip links that have images or other complex content
-      if (link.querySelector('img') || link.children.length > 0) {
+      // Skip links that have images
+      if (link.querySelector('img')) {
         return;
       }
       
-      // Get the original text
-      const originalText = link.textContent.trim();
+      // Get the text content - handling different types of links
+      let originalText;
+      const navItemLabel = link.querySelector('.wp-block-navigation-item__label');
+      
+      // For card buttons, extract just the base text without any appended content
+      if (link.classList.contains('card__button--on-black') || 
+          link.classList.contains('wp-block-read-more')) {
+        // Get the current text
+        const fullText = link.textContent.trim();
+        // Check if it contains a colon (which separates "View" from the title)
+        if (fullText.includes(':')) {
+          // Just take the part before the colon and trim it
+          originalText = fullText.split(':')[0].trim();
+        } else {
+          // If there's no colon, use the full text
+          originalText = fullText;
+        }
+      } else if (navItemLabel) {
+        // For navigation links with label spans
+        originalText = navItemLabel.textContent.trim();
+      } else {
+        // For links with direct text content
+        originalText = link.textContent.trim();
+      }
       
       // Skip empty links
       if (!originalText) {
