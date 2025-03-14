@@ -738,9 +738,9 @@ wp-block-navigation__responsive-container-content {
 /* Split Text Hover Effect CSS */
 .split-text-link {
   position: relative;
-  display: inline-flex; /* Changed from inline-block to inline-flex */
-  justify-content: center; /* Added to center the text */
-  align-items: center; /* Added to center the text vertically */
+  display: inline-flex;
+  justify-content: left;
+  align-items: center;
   overflow: hidden;
   padding: 0;
   transition: all 0.3s ease;
@@ -751,13 +751,13 @@ wp-block-navigation__responsive-container-content {
   display: inline-block;
   transition: transform 0.3s ease;
   width: 100%;
-  text-align: center; /* Added to ensure text is centered */
+  text-align: inherit; /* Inherit text alignment from parent */
 }
 
 /* Original text that moves up when hovered */
 .split-text-link .original {
   transform: translateY(0);
-  position: relative; /* Keep your original positioning */
+  position: relative;
 }
 
 /* Hover state - original text moves up */
@@ -777,6 +777,32 @@ wp-block-navigation__responsive-container-content {
 /* Hover state - hover text moves up */
 .split-text-link:hover .hover {
   transform: translateY(-100%);
+}
+
+/* Add this class to any link you want to disable the shifting effect on */
+.no-shift {
+  pointer-events: auto; /* Ensures the link remains clickable */
+}
+
+.no-shift span {
+  text-align: center !important; /* Force consistent text alignment */
+}
+
+/* Optional utility classes to control text alignment consistently */
+.text-center-hover .hover {
+  text-align: center;
+}
+
+.text-center-all span {
+  text-align: center;
+}
+
+.text-left-all span {
+  text-align: left;
+}
+
+.text-right-all span {
+  text-align: right;
 }
 
 .talent-grid {

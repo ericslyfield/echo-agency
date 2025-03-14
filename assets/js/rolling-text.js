@@ -14,7 +14,7 @@
     // Select all links that don't already have the split-text-link class
     // Use custom selector if available, otherwise use default
     const selector = window.splitTextCustomSelector || 
-                     'a:not(.split-text-link):not([href^="#"]):not(.no-split):not(#wpadminbar a):not(.wp-admin a)';
+                     'a:not(.split-text-link):not([href^="#"]):not(.no-split):not(#wpadminbar a):not(.wp-admin a):not(.no-shift)';
     const links = document.querySelectorAll(selector);
     
     // Process each link
