@@ -1,0 +1,22 @@
+// /* Initial state for the animate-title elements */
+// .animate-title {
+//     opacity: 1;                        /* Start partially visible (instead of fully invisible) */
+//     transform: translateX(-50px) scale(4); /* Start from left and scaled up 4x */
+//     font-weight: 750;                    /* Start with heavier font weight */
+//     transition: 
+//       opacity 1.5s ease-out, 
+//       transform 1.5s ease-out,
+//       font-weight 1.5s ease-out;         /* Smooth transitions for all properties */
+//     will-change: opacity, transform, font-weight; /* Optimize performance */
+//     transform-origin: left center;       /* Scale from the left */
+//     display: inline-block;              /* Prevent overflow issues */
+//     max-width: 100%;                    /* Keep within container */
+//     overflow: visible;                  /* Ensure content doesn't get clipped */
+//   }
+  
+//   /* When the title enters the viewport and becomes visible */
+//   .animate-title.visible {
+//     opacity: 1;                         /* Fully visible */
+//     transform: translateX(0) scale(1);  /* Move to final position and normal scale */
+//     font-weight: 200;                   /* End with lighter font weight */
+//   }

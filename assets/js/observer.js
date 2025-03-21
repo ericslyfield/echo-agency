@@ -28,4 +28,4 @@ const translateElementsOnScroll = (entries, observer) => {
       element.style.transitionDelay = '0s';
     });
     observer.observe(element);
-  });x
+  });

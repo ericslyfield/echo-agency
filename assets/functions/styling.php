@@ -49,10 +49,14 @@ class Styling {
         $this->register_script('ripple-click', '/assets/js/ripple-click.js');
         //Registers Ripple Hover Animation
         $this->register_script('ripple-hover', '/assets/js/ripple-hover.js');
-        //Registers Rolling Text
-        $this->register_script('rolling-text', '/assets/js/rolling-text.js');
         //Observer
         $this->register_script('observer', '/assets/js/observer.js');
+        //Registers Rolling Text
+        $this->register_script('rolling-text', '/assets/js/rolling-text.js');
+        //Single Talent Cover Image Animation
+        $this->register_script('animate-cover', '/assets/js/animate-cover.js');
+        //Single Talent Title Animation
+        $this->register_script('animate-title', '/assets/js/animate-title.js');
         //Registers Rolling Text
         $this->register_script('responsive-nav', '/assets/js/responsive-nav.js');
         // GSAP
@@ -94,6 +98,8 @@ private function register_script($handle, $path) {
         wp_enqueue_script('observer');
         wp_enqueue_script('link-hover');
         wp_enqueue_script('ripple-click');
+        wp_enqueue_script('animate-cover');
+        wp_enqueue_script('animate-title');
         wp_enqueue_script('rolling-text');
         wp_enqueue_script('responsive-nav');
     }

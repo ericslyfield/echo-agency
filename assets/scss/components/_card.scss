@@ -251,16 +251,36 @@
     }
 }
 
-// .card__button {
-//     font-family: var(--wp--preset--font-family--global);
-//     font-size: var(--wp--preset--font-size--medium);
-//     padding: 0.5rem 1rem;
-//     border-radius: 4px;
-//     background: transparent;
-//     cursor: pointer;
-//     transition: all 0.3s ease;
-// }
+/* Utility class to change button border color on card hover */
+.wp-block-group.has-primary-border-color {
+    transition: border-color 0.3s ease;
+}
 
-// .card__button:hover {
-//     background-color: rgba(255, 255, 255, 0.1);
-// }
+.card--on-beige:hover .wp-block-group.has-primary-border-color {
+    border-color: var(--wp--preset--color--sand) !important;
+}
+
+/* Alternative approach using a specific class */
+.border-hover-sand {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.card--on-beige:hover .border-hover-sand {
+    border-color: var(--wp--preset--color--sand) !important;
+}
+
+/* Add transition to all card buttons for consistency */
+.card .wp-block-group.has-border-color {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Handle other card background contexts if needed */
+.card--on-black:hover .wp-block-group.has-primary-border-color,
+.card--on-black:hover .border-hover-sand {
+    border-color: var(--wp--preset--color--sand) !important;
+}
+
+.card--on-red:hover .wp-block-group.has-primary-border-color,
+.card--on-red:hover .border-hover-sand {
+    border-color: var(--wp--preset--color--sand) !important;
+}

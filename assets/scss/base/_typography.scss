@@ -3,6 +3,7 @@
     font-family: 'Roc Grotesk Extra Wide';
     font-weight: 200;  
     src: url('../fonts/roc-grotesk-extra-wide-extra-light.otf');
+    font-display: swap;
 }
 
 // Light
@@ -10,6 +11,7 @@
     font-family: 'Roc Grotesk Extra Wide';
     font-weight: 300;
     src: url('../fonts/roc-grotesk-extra-wide-light.otf');
+    font-display: swap;
 }
 
 // Medium
@@ -17,6 +19,7 @@
     font-family: 'Roc Grotesk Extra Wide';
     font-weight: 500;
     src: url('../fonts/roc-grotesk-extra-wide-medium.otf');
+    font-display: swap;
 }
 
 // Bold
@@ -24,6 +27,7 @@
     font-family: 'Roc Grotesk Extra Wide';
     font-weight: 700;
     src: url('../fonts/roc-grotesk-extra-wide-bold.otf');
+    font-display: swap;
 }
 
 // Extra Bold
@@ -31,4 +35,5 @@
     font-family: 'Roc Grotesk Extra Wide';
     font-weight: 800; 
     src: url('../fonts/roc-grotesk-extra-wide-extra-bold.otf');
+    font-display: swap;
 }

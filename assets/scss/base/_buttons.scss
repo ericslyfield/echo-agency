@@ -1,5 +1,157 @@
 /* Set a special hover color */
 
-.wp-block-button {
+ 
+/* 
+ * Button Hover Utility Classes
+ * Based on Echo Agency Component Library
+ */
+
+/* Base transition for all utility classes */
+.transition-all {
     transition: all 0.3s ease;
-}
+  }
+  
+  /* 
+   * Background Fill Hover Utilities
+   * Usage: Add to any container that needs background color change on hover
+   */
+  
+  /* Fill with sand/beige color on hover */
+  .hover-fill-sand {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .hover-fill-sand:hover {
+    background-color: var(--wp--preset--color--sand) !important;
+  }
+  
+  /* Fill with red color on hover */
+  .hover-fill-red {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .hover-fill-red:hover {
+    background-color: var(--wp--preset--color--echo-red) !important;
+  }
+  
+  /* Fill with black color on hover */
+  .hover-fill-black {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .hover-fill-black:hover {
+    background-color: var(--wp--preset--color--black) !important;
+  }
+  
+  /* 
+   * Text Color Hover Utilities
+   * Usage: Add to any container where text needs color change on hover
+   */
+  
+  /* Change text to sand/beige on hover */
+  .hover-text-sand {
+    transition: color 0.3s ease;
+  }
+  .hover-text-sand:hover {
+    color: var(--wp--preset--color--sand) !important;
+  }
+  
+  /* Change text to red on hover */
+  .hover-text-red {
+    transition: color 0.3s ease;
+  }
+  .hover-text-red:hover {
+    color: var(--wp--preset--color--echo-red) !important;
+  }
+  
+  /* Change text to black on hover */
+  .hover-text-black {
+    transition: color 0.3s ease;
+  }
+  .hover-text-black:hover {
+    color: var(--wp--preset--color--black) !important;
+  }
+  
+  /* 
+   * Combined Button Hover Effects
+   * Usage: Add to button containers for complete hover state changes
+   */
+  
+  /* Black background buttons */
+  .button-hover-on-black {
+    transition: all 0.3s ease;
+  }
+  .button-hover-on-black:hover {
+    background-color: var(--wp--preset--color--echo-red) !important;
+    color: var(--wp--preset--color--sand) !important;
+    border-color: var(--wp--preset--color--echo-red) !important;
+  }
+  
+  /* Beige/Sand background buttons */
+  .button-hover-on-sand {
+    transition: all 0.3s ease;
+  }
+  .button-hover-on-sand:hover {
+    background-color: var(--wp--preset--color--black) !important;
+    color: var(--wp--preset--color--sand) !important;
+    border-color: var(--wp--preset--color--echo-red) !important;
+  }
+  
+  /* Red background buttons */
+  .button-hover-on-red {
+    transition: all 0.3s ease;
+  }
+  .button-hover-on-red:hover {
+    background-color: var(--wp--preset--color--sand) !important;
+    color: var(--wp--preset--color--black) !important;
+    border-color: var(--wp--preset--color--black) !important;
+  }
+
+/* Target only the visible text during hover without changing visibility properties */
+.button-hover-on-red .split-text-link .hover, .button-hover-on-red:hover a {
+    color: var(--wp--preset--color--black) !important; /* Set the hover state text color */
+  }
+  
+  /* Preserve the original text color in non-hover state */
+  .button-hover-on-red .split-text-link .original {
+    color: inherit; /* Or specify the exact color you want */
+  }
+
+
+  /* 
+   * Context-aware hover states
+   * These utilities detect parent background color and apply appropriate hover effects
+   */
+  
+  /* For buttons inside black background containers */
+  .in-black-bg .smart-hover-button {
+    border-color: var(--wp--preset--color--echo-red);
+    color: var(--wp--preset--color--echo-red);
+    transition: all 0.3s ease;
+  }
+  .in-black-bg .smart-hover-button:hover {
+    background-color: var(--wp--preset--color--echo-red);
+    color: var(--wp--preset--color--sand);
+    border-color: var(--wp--preset--color--sand);
+  }
+  
+  /* For buttons inside beige/sand background containers */
+  .in-sand-bg .smart-hover-button {
+    border-color: var(--wp--preset--color--echo-red);
+    color: var(--wp--preset--color--echo-red);
+    transition: all 0.3s ease;
+  }
+  .in-sand-bg .smart-hover-button:hover {
+    background-color: var(--wp--preset--color--echo-red);
+    color: var(--wp--preset--color--sand);
+    border-color: var(--wp--preset--color--sand);
+  }
+  
+  /* For buttons inside red background containers */
+  .in-red-bg .smart-hover-button {
+    border-color: var(--wp--preset--color--sand);
+    color: var(--wp--preset--color--sand);
+    transition: all 0.3s ease;
+  }
+  .in-red-bg .smart-hover-button:hover {
+    background-color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--sand);
+    border-color: var(--wp--preset--color--sand);
+  }

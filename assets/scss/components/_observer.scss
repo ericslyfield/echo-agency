@@ -1,18 +1,4 @@
-/* Initial state for the fade-in and scale-text elements */
-.fade-in, .scale-text {
-    opacity: 0;                    /* Start as invisible */
-    filter: blur(8px);              /* Initial blur of 8px */
-    transform: scale(5);            /* Start with a very large size (5x original size) */
-    transition: opacity 2s ease-out, filter 2s ease-out, transform 2s ease-out;  /* Smooth transitions */
-    will-change: opacity, filter, transform; /* Optimize performance */
-  }
-  
-  /* When the element enters the viewport and becomes visible */
-  .fade-in.visible, .scale-text.visible {
-    opacity: 1;                     /* Fully visible */
-    filter: blur(0);                 /* No blur (sharp focus) */
-    transform: scale(1);             /* Scale down to its original size */
-  }
+
   
   /* Initial state for the translate-up elements */
   .translate-up {

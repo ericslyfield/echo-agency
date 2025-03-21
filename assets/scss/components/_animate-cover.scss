@@ -1,0 +1,31 @@
+/**
+ * Animate Cover Block Styles
+ * 
+ * CSS for the "animate-cover" utility class that transforms
+ * WordPress cover block images from a centered circle to their normal position.
+ */
+
+ .animate-cover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animate-cover .wp-block-cover__image-background {
+    transition: transform 1.2s ease-out, border-radius 1.2s ease-out;
+    will-change: transform, border-radius;
+  }
+  
+  .animate-cover:not(.is-in-view) .wp-block-cover__image-background {
+    transform: translate(-50%, -50%) scale(0.5);
+    border-radius: 50%;
+    position: fixed !important;
+    top: 50vh !important;
+    left: 50vw !important;
+    z-index: 10;
+  }
+  
+  .animate-cover.is-in-view .wp-block-cover__image-background {
+    transform: translate(0, 0) scale(1);
+    border-radius: 0;
+    position: absolute;
+  }
