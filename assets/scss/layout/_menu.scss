@@ -1,32 +1,30 @@
-/* Styles for all items */
-.wp-block-navigation .wp-block-navigation-item__content {
-    margin-right: 2.25rem;
-    }
-    
-    .wp-block-navigation__responsive-container-close {
-        padding: 1.5rem 2.25rem 3.5rem 2.25rem;
-    }
-    
-    wp-block-navigation__responsive-container-content{
-     padding: 25px 45px;
-    }
-
-/* Make all navigation text uppercase */
+/* Styles Individual Navigation Links  */
 .wp-block-navigation-item__content {
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-  }
-  
-  
-  /* 
-   * Then we specify that the particular item being hovered
-   * should NOT be blurred
-   */
-  .wp-block-navigation-item:hover > .wp-block-navigation-item__content {
-    filter: blur(0) !important; /* Remove blur from the specific hovered item */
-  }
-  
-  /* Optional: Add some emphasis to the hovered item */
-  .wp-block-navigation-item:hover {
-    transform: scale(1.05);
-  }
+  margin-right: 2.25rem;
+  transition: all 0.3s ease; /* Sets Hover Animation Speed */
+}
+    
+.wp-block-navigation__responsive-container-close {
+  /* Adjusts Close Button Position */
+  position: absolute;
+  top: 50px; /* Change vertical position */
+  right: 50px; /* Change horizontal position */
+  /* Refines Close Button Positioning (Matches Styled Menu Button) */
+  transform: translate(10px, -10px);  
+}
+    
+.wp-block-navigation__responsive-container-content{
+  /* Adjust overall container positioning and spacing */
+  // padding: 40px;
+  // margin-top: 60px;
+  /* Or use positioning properties */
+  position: relative;
+  top: 80px;
+}
+
+.wp-block-navigation__responsive-dialog {
+  /* Overall dialog positioning */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}

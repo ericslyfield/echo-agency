@@ -484,36 +484,33 @@ select {
 @media (max-width: 390px) {
   /* Add mobile-specific classes here */
 }
-/* Styles for all items */
-.wp-block-navigation .wp-block-navigation-item__content {
+/* Styles Individual Navigation Links  */
+.wp-block-navigation-item__content {
   margin-right: 2.25rem;
+  transition: all 0.3s ease; /* Sets Hover Animation Speed */
 }
 
 .wp-block-navigation__responsive-container-close {
-  padding: 1.5rem 2.25rem 3.5rem 2.25rem;
+  /* Adjusts Close Button Position */
+  position: absolute;
+  top: 50px; /* Change vertical position */
+  right: 50px; /* Change horizontal position */
+  /* Refines Close Button Positioning (Matches Styled Menu Button) */
+  transform: translate(10px, -10px);
 }
 
-wp-block-navigation__responsive-container-content {
-  padding: 25px 45px;
+.wp-block-navigation__responsive-container-content {
+  /* Adjust overall container positioning and spacing */
+  /* Or use positioning properties */
+  position: relative;
+  top: 80px;
 }
 
-/* Make all navigation text uppercase */
-.wp-block-navigation-item__content {
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-/* 
- * Then we specify that the particular item being hovered
- * should NOT be blurred
- */
-.wp-block-navigation-item:hover > .wp-block-navigation-item__content {
-  filter: blur(0) !important; /* Remove blur from the specific hovered item */
-}
-
-/* Optional: Add some emphasis to the hovered item */
-.wp-block-navigation-item:hover {
-  transform: scale(1.05);
+.wp-block-navigation__responsive-dialog {
+  /* Overall dialog positioning */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
 }
 
 .circular-container {
@@ -1104,37 +1101,6 @@ wp-block-navigation__responsive-container-content {
 .translate-up.visible {
   opacity: 1; /* Fully visible */
   transform: translateY(0); /* Move to final position */
-}
-
-/**
- * Animate Cover Block Styles
- * 
- * CSS for the "animate-cover" utility class that transforms
- * WordPress cover block images from a centered circle to their normal position.
- */
-.animate-cover {
-  position: relative;
-  overflow: hidden;
-}
-
-.animate-cover .wp-block-cover__image-background {
-  transition: transform 1.2s ease-out, border-radius 1.2s ease-out;
-  will-change: transform, border-radius;
-}
-
-.animate-cover:not(.is-in-view) .wp-block-cover__image-background {
-  transform: translate(-50%, -50%) scale(0.5);
-  border-radius: 50%;
-  position: fixed !important;
-  top: 50vh !important;
-  left: 50vw !important;
-  z-index: 10;
-}
-
-.animate-cover.is-in-view .wp-block-cover__image-background {
-  transform: translate(0, 0) scale(1);
-  border-radius: 0;
-  position: absolute;
 }
 
 .wp-block-echo-agency-artist-view-more {
