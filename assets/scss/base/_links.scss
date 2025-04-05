@@ -1,0 +1,22 @@
+a {
+    position: relative;
+}
+  
+a::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    /* Makes the pseudo-element clickable */
+    z-index: -1;
+}
+
+/* Touch target improvements only for touch devices */
+@media (pointer: coarse) {
+    a {
+      padding: 8px;
+      margin: 4px;
+    }
+  }

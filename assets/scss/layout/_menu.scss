@@ -28,3 +28,51 @@
   flex-direction: column;
   padding: 30px;
 }
+
+/* Resize the hamburger menu button */
+.menu-toggle,
+button.menu-toggle,
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+    font-size: 24px !important; /* Adjust text size if using a text icon */
+    width: 40px !important; /* Adjust width */
+    height: 40px !important; /* Adjust height */
+    padding: 8px !important; /* Adjust padding */
+}
+
+/* If the menu uses an SVG icon */
+.menu-toggle svg {
+    width: 30px !important; /* Adjust SVG width */
+    height: 30px !important; /* Adjust SVG height */
+}
+
+/* For the close button */
+.close-nav-toggle,
+button.close-nav-toggle,
+.close-nav-toggle:hover,
+.close-nav-toggle:focus,
+.close-nav-toggle:active {
+    font-size: 24px !important; /* Adjust text size if using a text icon */
+    width: 40px !important; /* Adjust width */
+    height: 40px !important; /* Adjust height */
+    padding: 8px !important; /* Adjust padding */
+}
+
+/* If the close button uses an SVG icon */
+.close-nav-toggle svg {
+    width: 30px !important; /* Adjust SVG width */
+    height: 30px !important; /* Adjust SVG height */
+}
+
+/* For mobile viewports - adjust breakpoint as needed */
+@media screen and (max-width: 768px) {
+    .menu-toggle,
+    button.menu-toggle,
+    .close-nav-toggle,
+    button.close-nav-toggle {
+        width: 44px !important; /* Slightly larger on mobile for easier tapping */
+        height: 44px !important;
+        padding: 10px !important;
+    }
+}

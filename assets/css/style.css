@@ -1,3 +1,25 @@
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  /* Makes the pseudo-element clickable */
+  z-index: -1;
+}
+
+/* Touch target improvements only for touch devices */
+@media (pointer: coarse) {
+  a {
+    padding: 8px;
+    margin: 4px;
+  }
+}
 /**********************
 * Browser Reset Rules *
 ***********************/
@@ -151,6 +173,10 @@ select {
 
 .hover-fill-sand:hover {
   background-color: var(--wp--preset--color--sand) !important;
+  color: var(--wp--preset--color--black) !important;
+}
+.hover-fill-sand:hover a {
+  color: var(--wp--preset--color--black) !important;
 }
 
 /* Fill with red color on hover */
@@ -160,6 +186,10 @@ select {
 
 .hover-fill-red:hover {
   background-color: var(--wp--preset--color--echo-red) !important;
+  color: var(--wp--preset--color--sand) !important;
+}
+.hover-fill-red:hover a {
+  color: var(--wp--preset--color--sand) !important;
 }
 
 /* Fill with black color on hover */
@@ -169,6 +199,10 @@ select {
 
 .hover-fill-black:hover {
   background-color: var(--wp--preset--color--black) !important;
+  color: var(--wp--preset--color--sand) !important;
+}
+.hover-fill-black:hover a {
+  color: var(--wp--preset--color--sand) !important;
 }
 
 /* 
@@ -513,6 +547,53 @@ select {
   padding: 30px;
 }
 
+/* Resize the hamburger menu button */
+.menu-toggle,
+button.menu-toggle,
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+  font-size: 24px !important; /* Adjust text size if using a text icon */
+  width: 40px !important; /* Adjust width */
+  height: 40px !important; /* Adjust height */
+  padding: 8px !important; /* Adjust padding */
+}
+
+/* If the menu uses an SVG icon */
+.menu-toggle svg {
+  width: 30px !important; /* Adjust SVG width */
+  height: 30px !important; /* Adjust SVG height */
+}
+
+/* For the close button */
+.close-nav-toggle,
+button.close-nav-toggle,
+.close-nav-toggle:hover,
+.close-nav-toggle:focus,
+.close-nav-toggle:active {
+  font-size: 24px !important; /* Adjust text size if using a text icon */
+  width: 40px !important; /* Adjust width */
+  height: 40px !important; /* Adjust height */
+  padding: 8px !important; /* Adjust padding */
+}
+
+/* If the close button uses an SVG icon */
+.close-nav-toggle svg {
+  width: 30px !important; /* Adjust SVG width */
+  height: 30px !important; /* Adjust SVG height */
+}
+
+/* For mobile viewports - adjust breakpoint as needed */
+@media screen and (max-width: 768px) {
+  .menu-toggle,
+  button.menu-toggle,
+  .close-nav-toggle,
+  button.close-nav-toggle {
+    width: 44px !important; /* Slightly larger on mobile for easier tapping */
+    height: 44px !important;
+    padding: 10px !important;
+  }
+}
 .circular-container {
   /* Make the container behave as an inline-block to wrap content */
   display: inline-block;
@@ -719,6 +800,7 @@ select {
 
 /* Card variations based on background context */
 .card--on-black {
+  max-width: 35rem;
   border-radius: 15px;
   background-color: var(--wp--preset--color--black);
   color: var(--wp--preset--color--sand);
@@ -739,6 +821,7 @@ select {
 }
 
 .card--on-beige {
+  max-width: 35rem;
   border-radius: 15px;
   background-color: var(--wp--preset--color--sand);
   color: var(--wp--preset--color--echo-red);
@@ -759,6 +842,7 @@ select {
 }
 
 .card--on-red {
+  max-width: 35rem;
   border-radius: 15px;
   background-color: var(--wp--preset--color--echo-red);
   color: var(--wp--preset--color--sand);
@@ -780,6 +864,7 @@ select {
 
 /* Hover state modifiers */
 .card--on-black:hover {
+  max-width: 35rem;
   border-radius: 15px;
   background-color: var(--wp--preset--color--echo-red);
   border-color: var(--wp--preset--color--sand);
@@ -801,6 +886,7 @@ select {
 }
 
 .card--on-beige:hover {
+  max-width: 35rem;
   border-radius: 15px;
   background-color: var(--wp--preset--color--echo-red);
   border-color: var(--wp--preset--color--black);
@@ -821,6 +907,7 @@ select {
 }
 
 .card--on-red:hover {
+  max-width: 35rem;
   border-radius: 15px;
   background-color: var(--wp--preset--color--black);
   border-color: var(--wp--preset--color--black);
@@ -981,23 +1068,17 @@ select {
   text-align: center !important; /* Force consistent text alignment */
 }
 
-/* Optional utility classes to control text alignment consistently */
-.text-center-hover .hover {
-  text-align: center;
+/* Chrome-specific fix that preserves original text colors */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Make hover text inherit the color from its parent by default */
+  .split-text-link .hover {
+    color: inherit !important;
+  }
+  /* Force hardware acceleration but only in Chrome */
+  .split-text-link {
+    transform: translateZ(0);
+  }
 }
-
-.text-center-all span {
-  text-align: center;
-}
-
-.text-left-all span {
-  text-align: left;
-}
-
-.text-right-all span {
-  text-align: right;
-}
-
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

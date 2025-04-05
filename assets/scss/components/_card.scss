@@ -66,6 +66,7 @@
 
 // Black Background
 .card--on-black {
+    max-width: 35rem;
     border-radius: 15px;
     background-color: var(--wp--preset--color--black);
     color: var(--wp--preset--color--sand);
@@ -91,6 +92,7 @@
 
 // Beige Background
 .card--on-beige {
+    max-width: 35rem;
     border-radius: 15px;
     background-color: var(--wp--preset--color--sand);
     color: var(--wp--preset--color--echo-red);
@@ -116,6 +118,7 @@
 
 // Red Background
 .card--on-red {
+    max-width: 35rem;
     border-radius: 15px;
     background-color: var(--wp--preset--color--echo-red);
     color: var(--wp--preset--color--sand);
@@ -143,6 +146,7 @@
 
 // Hover on Black
 .card--on-black:hover {
+    max-width: 35rem;
     border-radius: 15px;
     background-color: var(--wp--preset--color--echo-red);
     border-color: var(--wp--preset--color--sand);
@@ -169,6 +173,7 @@
 
 // Hover on Beige
 .card--on-beige:hover {
+    max-width: 35rem;
     border-radius: 15px;
     background-color: var(--wp--preset--color--echo-red);
     border-color: var(--wp--preset--color--black);
@@ -194,6 +199,7 @@
 
 // Hover on Red
 .card--on-red:hover {
+    max-width: 35rem;
     border-radius: 15px;
     background-color: var(--wp--preset--color--black);
     border-color: var(--wp--preset--color--black);

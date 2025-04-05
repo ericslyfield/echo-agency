@@ -228,9 +228,6 @@
 	  "useRootPaddingAwareAlignments": true
 	},
 	"styles": {
-	  "color": {
-		"background": "var(--wp--preset--color--echo-red)"
-	  },
 	  "elements": {
 		"h1": {
 		  "typography": {

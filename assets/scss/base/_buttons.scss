@@ -22,6 +22,10 @@
   }
   .hover-fill-sand:hover {
     background-color: var(--wp--preset--color--sand) !important;
+    color: var(--wp--preset--color--black) !important;
+    a{
+      color: var(--wp--preset--color--black) !important;
+    }
   }
   
   /* Fill with red color on hover */
@@ -30,6 +34,11 @@
   }
   .hover-fill-red:hover {
     background-color: var(--wp--preset--color--echo-red) !important;
+    color: var(--wp--preset--color--sand) !important;
+
+    a{
+      color: var(--wp--preset--color--sand) !important;
+    }
   }
   
   /* Fill with black color on hover */
@@ -38,6 +47,11 @@
   }
   .hover-fill-black:hover {
     background-color: var(--wp--preset--color--black) !important;
+    color: var(--wp--preset--color--sand) !important;
+
+    a{
+      color: var(--wp--preset--color--sand) !important;
+    }
   }
   
   /* 

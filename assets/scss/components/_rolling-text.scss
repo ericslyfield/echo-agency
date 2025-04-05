@@ -51,19 +51,23 @@
   text-align: center !important; /* Force consistent text alignment */
 }
 
-/* Optional utility classes to control text alignment consistently */
-.text-center-hover .hover {
-  text-align: center;
-}
-
-.text-center-all span {
-  text-align: center;
-}
-
-.text-left-all span {
-  text-align: left;
-}
-
-.text-right-all span {
-  text-align: right;
+/* Chrome-specific fix that preserves original text colors */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Make hover text inherit the color from its parent by default */
+  .split-text-link .hover {
+    color: inherit !important;
+  }
+  
+  // /* Only target main navigation menu links to be white */
+  // .main-navigation .split-text-link .hover,
+  // .primary-menu .split-text-link .hover,
+  // .site-header .split-text-link .hover {
+  //   color: #FFFFFF !important;
+  // }
+  
+  /* Force hardware acceleration but only in Chrome */
+  .split-text-link {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
 }
