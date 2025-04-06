@@ -5,6 +5,8 @@
 (function() {
   // Function to process links - separated for reusability
   function processSplitTextLinks() {
+    console.log('Running split text process'); // Moved inside the function
+
     // More comprehensive admin area check
     if (document.body.classList.contains('wp-admin') || 
         window.location.href.indexOf('wp-admin') > -1 || 
@@ -18,8 +20,12 @@
     
     try {
       const links = document.querySelectorAll(selector);
+      console.log(`Found ${links.length} links to process`);
       
       links.forEach(function(link) {
+        // Each link is properly scoped within this function
+        console.log('Processing link:', link.outerHTML);
+        
         // Skip already processed links
         if (link.hasAttribute('data-split-processed')) {
           return;
@@ -90,9 +96,11 @@
           link.innerHTML = '';
           link.appendChild(wrapper);
           
+          console.log('Successfully processed link:', originalText);
+          
         } catch (innerError) {
           // Restore original content if anything goes wrong
-          console.warn('Split text effect error:', innerError);
+          console.error('Split text effect error:', innerError);
           link.innerHTML = originalHTML;
         }
       });
@@ -113,9 +121,6 @@
     };
   }
 
-//Console log...
-console.log('Running split text process');
-
   // Process on initial load using WordPress's domReady if available
   if (typeof wp !== 'undefined' && wp.domReady) {
     wp.domReady(processSplitTextLinks);
@@ -126,9 +131,8 @@ console.log('Running split text process');
   // Process after AJAX content loads (works with various WordPress plugins)
   const events = ['ajaxComplete', 'post-load', 'after_update_content'];
   events.forEach(event => {
+    // FIXED: No reference to undefined 'link' variable here
     document.addEventListener(event, debounce(processSplitTextLinks, 100));
-  // Console log...
-  console.log('Processing link:', link.outerHTML);
   });
   
   // Create a custom event other scripts can trigger
@@ -159,6 +163,6 @@ console.log('Running split text process');
     }
   } catch (e) {
     // Fallback for browsers without MutationObserver
-    console.warn('MutationObserver not supported, dynamic content may not receive split text effect');
+    console.error('MutationObserver not supported:', e);
   }
 })();
