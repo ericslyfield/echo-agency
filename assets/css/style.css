@@ -994,91 +994,20 @@ button.close-nav-toggle,
   border-color: var(--wp--preset--color--sand) !important;
 }
 
-#circle {
-  position: relative;
-  transform-style: preserve-3d;
-  animation: rotate-animation 10s linear infinite;
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center; /* centers vertically */
+/* Initial state for the translate-up elements */
+.translate-up {
+  opacity: 0; /* Start as invisible */
+  transform: translateY(50px); /* Start 50px below final position */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transitions */
+  will-change: opacity, transform; /* Optimize performance */
 }
 
-@keyframes rotate-animation {
-  0% {
-    transform: rotateY(360deg) rotateX(20deg);
-  }
-  100% {
-    transform: rotateY(0) rotateX(20deg);
-  }
-}
-.ebpg-entry-meta-items {
-  pointer-events: none;
+/* When the element enters the viewport and becomes visible */
+.translate-up.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to final position */
 }
 
-/* Split Text Hover Effect CSS */
-.split-text-link {
-  position: relative;
-  display: inline-flex;
-  justify-content: left;
-  align-items: center;
-  overflow: hidden;
-  padding: 0;
-  transition: all 0.3s ease;
-}
-
-/* Style for both the original and hover text */
-.split-text-link span {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  width: 100%;
-  text-align: inherit; /* Inherit text alignment from parent */
-}
-
-/* Original text that moves up when hovered */
-.split-text-link .original {
-  transform: translateY(0);
-  position: relative;
-}
-
-/* Hover state - original text moves up */
-.split-text-link:hover .original {
-  transform: translateY(-100%);
-}
-
-/* Hover text that moves up into view */
-.split-text-link .hover {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  transform: translateY(0);
-}
-
-/* Hover state - hover text moves up */
-.split-text-link:hover .hover {
-  transform: translateY(-100%);
-}
-
-/* Add this class to any link you want to disable the shifting effect on */
-.no-shift {
-  pointer-events: auto; /* Ensures the link remains clickable */
-}
-
-.no-shift span {
-  text-align: center !important; /* Force consistent text alignment */
-}
-
-/* Chrome-specific fix that preserves original text colors */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* Make hover text inherit the color from its parent by default */
-  .split-text-link .hover {
-    color: inherit !important;
-  }
-  /* Force hardware acceleration but only in Chrome */
-  .split-text-link {
-    transform: translateZ(0);
-  }
-}
 .talent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1170,20 +1099,91 @@ button.close-nav-toggle,
   word-break: auto-phrase;
 }
 
-/* Initial state for the translate-up elements */
-.translate-up {
-  opacity: 0; /* Start as invisible */
-  transform: translateY(50px); /* Start 50px below final position */
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transitions */
-  will-change: opacity, transform; /* Optimize performance */
+#circle {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate-animation 10s linear infinite;
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
 }
 
-/* When the element enters the viewport and becomes visible */
-.translate-up.visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move to final position */
+@keyframes rotate-animation {
+  0% {
+    transform: rotateY(360deg) rotateX(20deg);
+  }
+  100% {
+    transform: rotateY(0) rotateX(20deg);
+  }
+}
+.ebpg-entry-meta-items {
+  pointer-events: none;
 }
 
+/* Split Text Hover Effect CSS */
+.split-text-link {
+  position: relative;
+  display: inline-flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* Style for both the original and hover text */
+.split-text-link span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  width: 100%;
+  text-align: inherit; /* Inherit text alignment from parent */
+}
+
+/* Original text that moves up when hovered */
+.split-text-link .original {
+  transform: translateY(0);
+  position: relative;
+}
+
+/* Hover state - original text moves up */
+.split-text-link:hover .original {
+  transform: translateY(-100%);
+}
+
+/* Hover text that moves up into view */
+.split-text-link .hover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(0);
+}
+
+/* Hover state - hover text moves up */
+.split-text-link:hover .hover {
+  transform: translateY(-100%);
+}
+
+/* Add this class to any link you want to disable the shifting effect on */
+.no-shift {
+  pointer-events: auto; /* Ensures the link remains clickable */
+}
+
+.no-shift span {
+  text-align: center !important; /* Force consistent text alignment */
+}
+
+/* Chrome-specific fix that preserves original text colors */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Make hover text inherit the color from its parent by default */
+  .split-text-link .hover {
+    color: inherit !important;
+  }
+  /* Force hardware acceleration but only in Chrome */
+  .split-text-link {
+    transform: translateZ(0);
+  }
+}
 .wp-block-echo-agency-artist-view-more {
   margin: 1.5em 0;
 }

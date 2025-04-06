@@ -113,6 +113,9 @@
     };
   }
 
+//Console log...
+console.log('Running split text process');
+
   // Process on initial load using WordPress's domReady if available
   if (typeof wp !== 'undefined' && wp.domReady) {
     wp.domReady(processSplitTextLinks);
@@ -124,6 +127,8 @@
   const events = ['ajaxComplete', 'post-load', 'after_update_content'];
   events.forEach(event => {
     document.addEventListener(event, debounce(processSplitTextLinks, 100));
+  // Console log...
+  console.log('Processing link:', link.outerHTML);
   });
   
   // Create a custom event other scripts can trigger

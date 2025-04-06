@@ -1,8 +1,9 @@
 /**
- * CoverAnimator - Animates cover images from circle to default state
+ * CoverAnimator - Animates cover images sliding in from left edge
  * 
- * This script transforms cover images with the .animate-cover class
- * from a perfect circle in the center of the screen to their default position.
+ * This script slides cover images with the .animate-cover class
+ * from outside the left edge of the viewport to their default position,
+ * maintaining their original size and aspect ratio.
  */
 (function() {
   // Add style tag to hide cover elements immediately (before DOM is fully loaded)
@@ -20,11 +21,9 @@
     // Configuration
     const config = {
       coverSelector: '.animate-cover',
-      startScale: 0.5,       // Starting at 50% of final size
-      endScale: 1,           // Ending at 100%
-      duration: '1.8s',      // Animation duration
-      easing: 'cubic-bezier(0.22, 1, 0.36, 1)', // Smooth easing
-      delay: '0.2s'          // Slight delay to let page settle
+      duration: '1.5s',        // Animation duration
+      easing: 'cubic-bezier(.25,.59,.84,1)', // Smooth easing
+      delay: '0.2s'            // Slight delay to let page settle
     };
 
     // Find all matching elements
@@ -46,135 +45,48 @@
         return;
       }
       
-      // Get the viewport dimensions
+      // Get the viewport width
       const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
       
-      // Store original styles to revert to
-      const originalStyles = {
-        position: cover.style.position,
-        width: cover.style.width,
-        height: cover.style.height,
-        borderRadius: cover.style.borderRadius,
-        transform: cover.style.transform,
-        top: cover.style.top,
-        left: cover.style.left,
-        zIndex: cover.style.zIndex
-      };
+      // Store original styles
+      const originalPosition = window.getComputedStyle(cover).position;
+      const originalTransform = cover.style.transform || '';
       
-      // Find the image inside the cover
-      const image = cover.querySelector('img');
-      if (!image) {
-        console.warn('Cover element does not contain an image:', cover);
-        return;
-      }
-      
-      // Store original image styles
-      const originalImageStyles = {
-        objectFit: image.style.objectFit,
-        objectPosition: image.style.objectPosition
-      };
-      
-      // Get cover's natural dimensions and position
+      // Get cover's dimensions
       const coverRect = cover.getBoundingClientRect();
       
-      // Calculate the size of the circle (using the smaller dimension)
-      const circleSize = Math.min(coverRect.width, coverRect.height) * config.startScale;
+      // Make cover position relative if it's static
+      if (originalPosition === 'static') {
+        cover.style.position = 'relative';
+      }
       
-      // Center position calculations
-      const centerX = (viewportWidth / 2) - (circleSize / 2);
-      const centerY = (viewportHeight / 2) - (circleSize / 2);
-      
-      // Calculate offset from original position
-      const offsetX = centerX - coverRect.left;
-      const offsetY = centerY - coverRect.top;
-      
-      // Prepare wrapper for proper positioning
-      const parent = cover.parentNode;
-      const wrapper = document.createElement('div');
-      wrapper.style.position = 'relative';
-      wrapper.style.overflow = 'visible';
-      wrapper.style.width = coverRect.width + 'px';
-      wrapper.style.height = coverRect.height + 'px';
-      
-      // Insert wrapper before the cover
-      parent.insertBefore(wrapper, cover);
-      
-      // Initially hide the cover
+      // Set initial hidden position (off-screen to the left)
+      cover.style.transform = `translateX(-${viewportWidth + coverRect.width}px) ${originalTransform}`;
+      cover.style.transition = `transform ${config.duration} ${config.easing}, opacity 0.3s ease-in`;
       cover.style.opacity = '0';
       cover.style.visibility = 'hidden';
       
-      // Move cover inside wrapper
-      wrapper.appendChild(cover);
-      
-      // Set initial circle state
-      cover.style.position = 'absolute';
-      cover.style.width = circleSize + 'px';
-      cover.style.height = circleSize + 'px';
-      cover.style.borderRadius = '50%';
-      cover.style.overflow = 'hidden';
-      cover.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${config.startScale})`;
-      cover.style.transformOrigin = 'center center';
-      cover.style.zIndex = '100';
-      
-      // Adjust image for circle state
-      image.style.objectFit = 'cover';
-      image.style.objectPosition = 'center center';
-      
-      // Set up transitions
-      cover.style.transition = `
-        transform ${config.duration} ${config.easing},
-        width ${config.duration} ${config.easing},
-        height ${config.duration} ${config.easing},
-        border-radius ${config.duration} ${config.easing},
-        opacity 0.3s ease-in ${config.delay}
-      `;
-      
-      // Make parent elements overflow visible to allow animation
-      let parentEl = wrapper.parentElement;
-      while (parentEl && parentEl !== document.body) {
-        if (getComputedStyle(parentEl).overflow !== 'visible') {
-          parentEl.style.overflow = 'visible';
-        }
-        parentEl = parentEl.parentElement;
-      }
-      
-      // Give a moment for the browser to process
+      // Create a moment for browser layout calculation
       setTimeout(() => {
-        // Show the cover (still in circle state)
+        // Show the element (still off-screen)
         cover.style.opacity = '1';
         cover.style.visibility = 'visible';
         
         // Small delay before animation
         setTimeout(() => {
-          // Animate to final state
-          cover.style.transform = 'translate(0, 0) scale(1)';
-          cover.style.width = coverRect.width + 'px';
-          cover.style.height = coverRect.height + 'px';
-          cover.style.borderRadius = originalStyles.borderRadius || '0';
+          // Animate to original position
+          cover.style.transform = originalTransform || 'translateX(0)';
           
-          // Listen for transition end to clean up
+          // Clean up after animation
           cover.addEventListener('transitionend', function cleanup(e) {
             if (e.propertyName === 'transform') {
-              // Remove event listener
               cover.removeEventListener('transitionend', cleanup);
-              
-              // Reset to original styles after animation completes
-              for (const [prop, value] of Object.entries(originalStyles)) {
-                if (value) cover.style[prop] = value;
-              }
-              
-              // Reset image styles
-              for (const [prop, value] of Object.entries(originalImageStyles)) {
-                if (value) image.style[prop] = value;
-              }
-              
-              // Add class to indicate animation is complete
               cover.classList.add('cover-animation-complete');
               
-              // Keep any necessary styles for final state
-              cover.style.opacity = '1';
-              cover.style.visibility = 'visible';
+              // If position was changed from static, restore it after animation
+              if (originalPosition === 'static') {
+                cover.style.position = 'static';
+              }
             }
           });
         }, 50);
