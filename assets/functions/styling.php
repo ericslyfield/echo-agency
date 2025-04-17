@@ -96,9 +96,9 @@ private function register_script($handle, $path) {
     private function enqueue_registered_scripts() {
         wp_enqueue_script('scripts');
         wp_enqueue_script('observer');
-        wp_enqueue_script('link-hover');
+        // wp_enqueue_script('link-hover');
         wp_enqueue_script('ripple-click');
-        wp_enqueue_script('animate-cover');
+        // wp_enqueue_script('animate-cover');
         wp_enqueue_script('animate-title');
         wp_enqueue_script('rolling-text');
         wp_enqueue_script('responsive-nav');
